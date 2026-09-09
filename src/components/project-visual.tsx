@@ -26,7 +26,7 @@ export function ProjectVisual({
           alt={media.alt[locale]}
           fill
           sizes={
-            index === 0 || detail
+            index === 0 || index === 3 || detail
               ? '(max-width: 767px) 100vw, 90vw'
               : '(max-width: 767px) 100vw, 45vw'
           }
@@ -95,7 +95,7 @@ export function ProjectVisual({
             <span>{p.category}</span>
           </div>
         </>
-      ) : (
+      ) : index === 2 ? (
         <>
           <div className="platform-grid" />
           <div className="platform-caption">
@@ -129,6 +129,22 @@ export function ProjectVisual({
           <div className="visual-bottom">
             <span>{c.independentProduct}</span>
             <span>01 — 03</span>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="jarvis-signal" aria-hidden="true">
+            {[12, 22, 38, 60, 42, 74, 100, 64, 40, 82, 54, 30, 18].map((height, i) => (
+              <span key={i} style={{ height: `${height}%` }} />
+            ))}
+          </div>
+          <div className="jarvis-title">
+            <span>{p.name}</span>
+            <p>{p.subtitle}</p>
+          </div>
+          <div className="visual-bottom">
+            <span>{p.typeLabel}</span>
+            <span>{p.category}</span>
           </div>
         </>
       )}

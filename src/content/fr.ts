@@ -51,7 +51,7 @@ const fr: Content = {
       ],
     },
     {
-      name: 'Développement de produit',
+      name: 'Produits numériques',
       text: 'De la première idée à un produit utilisable, avec le design et le développement réunis dès le départ.',
       items: [
         'Définition du produit',
@@ -77,6 +77,42 @@ const fr: Content = {
     'Vous échangez directement avec la personne qui construit votre produit. Des conversations claires, des décisions réfléchies et une attention partagée aux détails. Basés en Europe, nous collaborons à distance avec des entreprises du monde entier.',
   founder: 'Fondateur et développeur',
   aboutLink: 'Découvrir le studio',
+  studio: {
+    statement: 'Un bon projet commence par un échange.',
+    principlesTitle: 'Ce qui guide notre travail.',
+    processLabel: 'Notre façon de travailler',
+  },
+  capabilities: {
+    title: 'Compétences techniques',
+    intro:
+      'Outils et technologies utilisés pour le web, les logiciels et les produits indépendants.',
+    groups: [
+      {
+        name: 'Développement frontend',
+        items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
+      },
+      {
+        name: 'Backend et bases de données',
+        items: ['Python', 'PHP', 'Supabase', 'PostgreSQL', 'SQL', 'API REST'],
+      },
+      {
+        name: 'IA et voix',
+        items: ['Gemini API', 'Reconnaissance vocale', 'Synthèse vocale', 'whisper.cpp', 'Piper'],
+      },
+      {
+        name: 'Applications de bureau et multiplateformes',
+        items: ['Tauri', 'React', 'PWA', 'API web'],
+      },
+      {
+        name: 'CMS et plateformes web',
+        items: ['WordPress', 'Elementor'],
+      },
+      {
+        name: 'Développement et déploiement',
+        items: ['Git', 'GitHub', 'Vercel', 'Cloudflare'],
+      },
+    ],
+  },
   principles: [
     {
       name: 'La clarté d’abord',
@@ -174,6 +210,52 @@ const fr: Content = {
       outcome:
         'En développement. Il s’agit d’un produit indépendant, et non d’un projet client ou d’un service déjà lancé.',
       highlights: ['Gestion des équipes', 'Plannings et disponibilités', 'Processus opérationnels'],
+    },
+    {
+      name: 'J.A.R.V.I.S.',
+      subtitle: 'Assistant vocal avec IA',
+      typeLabel: 'Projet indépendant',
+      category: 'IA · Application de bureau · Application web',
+      description:
+        'Un assistant vocal multiplateforme associant reconnaissance vocale, IA conversationnelle et interaction en temps réel sur ordinateur et sur le web.',
+      challenge:
+        'Explorer une interaction plus naturelle avec le logiciel grâce à la voix. Le défi technique consiste à coordonner reconnaissance vocale, réponses de l’IA et synthèse vocale, tout en rendant chaque étape compréhensible.',
+      approach:
+        'Concevoir la voix et le retour visuel comme une seule expérience. Une interface futuriste et interactive indique si l’assistant est prêt, à l’écoute, en cours de traitement ou en train de répondre.',
+      solution:
+        'Un assistant personnel indépendant développé par Enzo Sena sous deux formes complémentaires : une application de bureau avec traitement local de la voix, et une expérience web/PWA intégrant l’IA via une API.',
+      outcome:
+        'Une exploration indépendante de la voix, de l’IA conversationnelle et du retour visuel en temps réel sur ordinateur et sur le web. Le projet réunit développement d’applications de bureau, interfaces mobiles, intégration d’API et logiciel sur mesure.',
+      highlights: [
+        'Reconnaissance et synthèse vocales',
+        'IA conversationnelle via une API dans la version web',
+        'États visuels d’interaction en temps réel',
+        'Traitement local de la voix sur ordinateur',
+        'Accès par navigateur et prise en charge du mobile',
+        'Expériences de bureau et web/PWA',
+      ],
+      sections: [
+        {
+          title: 'Application de bureau',
+          text: 'Développée avec Tauri et React / Vite. Le traitement vocal sur ordinateur utilise whisper.cpp pour transcrire la parole et Piper pour la synthèse vocale, dans une interface interactive qui rend visible l’état de l’assistant.',
+        },
+        {
+          title: 'Expérience web / PWA',
+          text: 'Accessible depuis le navigateur et adaptée aux appareils mobiles. La version web associe reconnaissance et synthèse vocales du navigateur, architecture serverless et intégration de l’IA via une API.',
+        },
+        {
+          title: 'Interaction vocale',
+          text: 'La saisie vocale, le traitement et la réponse parlée constituent le cycle d’interaction. Les états visuels — prêt, à l’écoute, traitement et réponse — permettent de suivre chaque étape en temps réel.',
+        },
+        {
+          title: 'Intégration de l’IA',
+          text: 'Dans la version web, l’IA conversationnelle est intégrée via une API. Cette connexion associe interaction vocale et réponses de l’IA au sein de l’expérience accessible par navigateur.',
+        },
+        {
+          title: 'Technologies utilisées',
+          text: 'Application de bureau : Tauri, React, Vite, whisper.cpp et Piper. Web / PWA : reconnaissance vocale du navigateur, synthèse vocale, API d’IA et architecture serverless.',
+        },
+      ],
     },
   ],
   form: {

@@ -71,6 +71,52 @@ for (const locale of locales) {
     }
   });
 }
+test('J.A.R.V.I.S. has localized independent-project content and both application variants', async ({
+  page,
+}) => {
+  for (const locale of locales) {
+    const c = dictionaries[locale];
+    const project = c.projects[slugs.indexOf('jarvis')];
+    await page.goto(`/${locale}/work/jarvis`);
+    await expect(page.locator('h1')).toHaveText('J.A.R.V.I.S.');
+    await expect(page.locator('.case-subtitle')).toHaveText(project.subtitle!);
+    await expect(page.locator('.case-intro > .eyebrow')).toHaveText(project.typeLabel!);
+    await expect(page.locator('.case-intro .intro-copy')).toHaveText(project.description);
+    await expect(page.locator('main').getByText(c.inDevelopment, { exact: true })).toHaveCount(0);
+    await expect(
+      page.locator('.case-metadata dt').getByText(c.caseLabels[6], { exact: true }),
+    ).toHaveCount(0);
+    for (const section of project.sections!) {
+      await expect(
+        page.locator('.case-story .eyebrow').filter({ hasText: section.title }),
+      ).toBeVisible();
+    }
+    for (const technology of ['Tauri', 'React', 'Vite', 'whisper.cpp', 'Piper', 'API']) {
+      await expect(page.locator('.case-story')).toContainText(technology);
+    }
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      'content',
+      project.description,
+    );
+  }
+});
+
+test('fourth project appears in work lists and connects the case-study sequence', async ({
+  page,
+}) => {
+  for (const path of ['/en', '/en/work']) {
+    await page.goto(path);
+    await expect(page.locator('.project-showcase')).toHaveCount(slugs.length);
+    await expect(page.locator('.project-3 h3 a')).toHaveAttribute('href', '/en/work/jarvis');
+  }
+  await page.goto('/en/work/restaurant-platform');
+  await page.locator('.next-project > a').click();
+  await expect(page).toHaveURL('/en/work/jarvis');
+  await expect(page.locator('.next-project > a')).toHaveAttribute('href', '/en/work/resisol');
+  await page.selectOption('#desktop-language', 'pt');
+  await expect(page).toHaveURL('/pt/work/jarvis');
+});
+
 test('language selector preserves case study and mobile menu manages focus', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto('/en/work/resisol');
@@ -172,7 +218,7 @@ test('root strategy, missing routes, sitemap, robots and reduced motion', async 
   expect((await request.get('/es')).status()).toBe(404);
   const sitemap = await request.get('/sitemap.xml');
   expect(sitemap.status()).toBe(200);
-  expect((await sitemap.text()).match(/<loc>/g)?.length).toBe(50);
+  expect((await sitemap.text()).match(/<loc>/g)?.length).toBe(paths.length * locales.length);
   expect(await (await request.get('/robots.txt')).text()).toContain(
     'https://senzcompany.com/sitemap.xml',
   );

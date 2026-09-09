@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './studio.css';
 
 @theme inline {
   --color-paper: #f5f4ef;
@@ -409,7 +410,8 @@ svg {
   grid-template-columns: 1fr 1fr;
   gap: 50px 28px;
 }
-.project-0 {
+.project-0,
+.project-3 {
   grid-column: 1/-1;
 }
 .project-image-link {
@@ -424,7 +426,8 @@ svg {
   transition: filter 0.5s var(--ease);
   isolation: isolate;
 }
-.project-0 .project-visual {
+.project-0 .project-visual,
+.project-3 .project-visual {
   aspect-ratio: 2.15;
 }
 .project-open {
@@ -717,6 +720,51 @@ svg {
 .visual-2 {
   background: #d8ddca;
   color: #35402d;
+}
+.visual-3 {
+  background: var(--ink);
+  color: var(--paper);
+}
+.jarvis-signal {
+  position: absolute;
+  top: 12%;
+  right: 7%;
+  width: 44%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3%;
+  transition: transform 0.8s var(--ease);
+}
+.jarvis-signal span {
+  flex: 1;
+  background: var(--sage);
+}
+.project-image-link:hover .jarvis-signal {
+  transform: translateY(-4px);
+}
+.jarvis-title {
+  position: absolute;
+  left: 4.5%;
+  bottom: 17%;
+  right: 4.5%;
+}
+.jarvis-title > span {
+  font-size: clamp(38px, 9vw, 140px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+.jarvis-title p {
+  margin-top: 12px;
+  font-size: clamp(12px, 1.5vw, 23px);
+  color: var(--sage);
+}
+.case-subtitle {
+  margin-top: 24px;
+  font-size: clamp(20px, 2.25vw, 36px);
+  letter-spacing: -0.035em;
+  line-height: 1.3;
 }
 .platform-grid {
   position: absolute;
@@ -1173,6 +1221,99 @@ svg {
   grid-template-columns: 1fr 1fr;
   gap: 10%;
   padding-block: 85px 100px;
+}
+.capabilities {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10%;
+  padding-block: 20px var(--section);
+}
+.capabilities-intro h2 {
+  font-size: clamp(28px, 2.6vw, 40px);
+  max-width: 400px;
+  line-height: 1.15;
+}
+.capabilities-intro p {
+  margin-top: 20px;
+  max-width: 370px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.disclosure {
+  border-top: 1px solid var(--line);
+}
+.disclosure:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.disclosure h3 {
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.25;
+}
+.disclosure button {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  background: transparent;
+  text-align: left;
+  letter-spacing: inherit;
+}
+.disclosure button > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.disclosure button svg {
+  transition: transform 0.35s var(--ease);
+}
+.disclosure[data-open='true'] button svg {
+  transform: rotate(180deg);
+}
+.disclosure-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.35s var(--ease),
+    visibility 0.35s;
+}
+.disclosure[data-open='true'] .disclosure-panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+.disclosure-clip {
+  min-height: 0;
+  overflow: hidden;
+}
+.disclosure-body {
+  padding-bottom: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+.capability-tools {
+  display: flex;
+  flex-wrap: wrap;
+}
+.capability-tools li {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.capability-tools li > span {
+  padding-inline: 8px;
+}
+@media (max-width: 767px) {
+  .capabilities {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+  .disclosure button {
+    min-height: 72px;
+    padding-block: 20px;
+  }
 }
 .contact-intro h1 {
   font-size: clamp(42px, 4.4vw, 70px);
@@ -1657,10 +1798,12 @@ svg {
     grid-template-columns: 1fr;
     gap: 35px;
   }
-  .project-0 {
+  .project-0,
+  .project-3 {
     grid-column: auto;
   }
-  .project-0 .project-visual {
+  .project-0 .project-visual,
+  .project-3 .project-visual {
     aspect-ratio: 1.4;
   }
   .project-visual {

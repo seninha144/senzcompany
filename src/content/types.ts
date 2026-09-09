@@ -1,17 +1,20 @@
 export const locales = ['en', 'pt', 'fr', 'it', 'de'] as const;
 export type Locale = (typeof locales)[number];
 export const isLocale = (value: string): value is Locale => locales.includes(value as Locale);
-export const slugs = ['resisol', 'marcos-cell', 'restaurant-platform'] as const;
+export const slugs = ['resisol', 'marcos-cell', 'restaurant-platform', 'jarvis'] as const;
 export type Project = {
   name: string;
+  subtitle?: string;
+  typeLabel?: string;
   category: string;
-  location: string;
+  location?: string;
   description: string;
   challenge: string;
   approach: string;
   solution: string;
   outcome: string;
   highlights: string[];
+  sections?: { title: string; text: string }[];
 };
 export type Content = {
   nav: string[];
@@ -43,7 +46,13 @@ export type Content = {
   aboutSecond: string;
   founder: string;
   aboutLink: string;
+  studio: { statement: string; principlesTitle: string; processLabel: string };
   principles: { name: string; text: string }[];
+  capabilities: {
+    title: string;
+    intro: string;
+    groups: { name: string; items: string[] }[];
+  };
   contactTitle: string;
   contactIntro: string;
   emailLabel: string;

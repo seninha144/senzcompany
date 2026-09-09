@@ -56,7 +56,7 @@ const de: Content = {
       ],
     },
     {
-      name: 'Produktentwicklung',
+      name: 'Digitale Produkte',
       text: 'Von der ersten Idee zum nutzbaren Produkt. Gestaltung und Entwicklung greifen von Anfang an ineinander.',
       items: [
         'Produktdefinition',
@@ -82,6 +82,42 @@ const de: Content = {
     'Sie arbeiten direkt mit der Person, die Ihr Produkt entwickelt. Klare Gespräche, überlegte Entscheidungen und ein gemeinsamer Anspruch an die Details. Von Europa aus arbeiten wir remote mit Unternehmen weltweit.',
   founder: 'Gründer und Entwickler',
   aboutLink: 'Das Studio kennenlernen',
+  studio: {
+    statement: 'Gute Arbeit beginnt mit einem Gespräch.',
+    principlesTitle: 'Was unsere Arbeit prägt.',
+    processLabel: 'Wie wir arbeiten',
+  },
+  capabilities: {
+    title: 'Technische Kompetenzen',
+    intro:
+      'Werkzeuge und Technologien aus der Web-, Software- und eigenständigen Produktentwicklung.',
+    groups: [
+      {
+        name: 'Frontend-Entwicklung',
+        items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
+      },
+      {
+        name: 'Backend & Datenbanken',
+        items: ['Python', 'PHP', 'Supabase', 'PostgreSQL', 'SQL', 'REST-APIs'],
+      },
+      {
+        name: 'KI & Sprache',
+        items: ['Gemini API', 'Spracherkennung', 'Sprachausgabe', 'whisper.cpp', 'Piper'],
+      },
+      {
+        name: 'Desktop & plattformübergreifende Anwendungen',
+        items: ['Tauri', 'React', 'PWA', 'Web-APIs'],
+      },
+      {
+        name: 'CMS & Webplattformen',
+        items: ['WordPress', 'Elementor'],
+      },
+      {
+        name: 'Entwicklung & Bereitstellung',
+        items: ['Git', 'GitHub', 'Vercel', 'Cloudflare'],
+      },
+    ],
+  },
   principles: [
     {
       name: 'Klarheit zuerst',
@@ -187,6 +223,52 @@ const de: Content = {
         'Personalverwaltung',
         'Dienstplanung und Verfügbarkeit',
         'Betriebliche Arbeitsabläufe',
+      ],
+    },
+    {
+      name: 'J.A.R.V.I.S.',
+      subtitle: 'KI-Sprachassistent',
+      typeLabel: 'Eigenständiges Projekt',
+      category: 'KI · Desktop-Anwendung · Webanwendung',
+      description:
+        'Ein plattformübergreifender KI-Sprachassistent, der Spracherkennung, dialogbasierte KI und Echtzeitinteraktion auf dem Desktop und im Web verbindet.',
+      challenge:
+        'Eine natürlichere Interaktion mit Software durch Sprache erkunden. Die technische Herausforderung besteht darin, Spracherkennung, KI-Antworten und Sprachausgabe zu koordinieren und dabei jeden Schritt verständlich darzustellen.',
+      approach:
+        'Sprache und visuelle Rückmeldung als eine gemeinsame Erfahrung gestalten. Eine futuristische, interaktive Oberfläche zeigt, ob der Assistent bereit ist, zuhört, verarbeitet oder antwortet.',
+      solution:
+        'Ein von Enzo Sena entwickelter, eigenständiger persönlicher Assistent mit zwei ergänzenden Varianten: eine Desktop-Anwendung mit lokaler Sprachverarbeitung und eine Web-/PWA-Erfahrung mit KI-Anbindung über eine API.',
+      outcome:
+        'Eine eigenständige Erkundung von Sprache, dialogbasierter KI und visueller Rückmeldung in Echtzeit auf dem Desktop und im Web. Das Projekt verbindet Desktop-Entwicklung, mobile Oberflächen, API-Anbindung und individuelle Software.',
+      highlights: [
+        'Spracherkennung und Sprachausgabe',
+        'Dialogbasierte KI über eine API in der Webversion',
+        'Visuelle Interaktionszustände in Echtzeit',
+        'Lokale Sprachverarbeitung auf dem Desktop',
+        'Browserzugang und Unterstützung für Mobilgeräte',
+        'Desktop- und Web-/PWA-Erfahrungen',
+      ],
+      sections: [
+        {
+          title: 'Desktop-Anwendung',
+          text: 'Entwickelt mit Tauri und React / Vite. Die Sprachverarbeitung auf dem Desktop nutzt whisper.cpp zur Umwandlung von Sprache in Text und Piper zur Sprachausgabe. Die interaktive Oberfläche macht den Zustand des Assistenten sichtbar.',
+        },
+        {
+          title: 'Web- / PWA-Erfahrung',
+          text: 'Im Browser zugänglich und für Mobilgeräte angepasst. Die Webversion verbindet browserbasierte Spracherkennung und Sprachausgabe mit einer serverlosen Architektur und KI-Anbindung über eine API.',
+        },
+        {
+          title: 'Sprachinteraktion',
+          text: 'Spracheingabe, Verarbeitung und gesprochene Antwort bilden den Interaktionsablauf. Die visuellen Zustände — bereit, zuhören, verarbeiten und antworten — machen jeden Schritt in Echtzeit nachvollziehbar.',
+        },
+        {
+          title: 'KI-Anbindung',
+          text: 'In der Webversion wird die dialogbasierte KI über eine API angebunden. Dadurch werden Sprachinteraktion und KI-Antworten innerhalb der browserbasierten Erfahrung miteinander verbunden.',
+        },
+        {
+          title: 'Verwendete Technologien',
+          text: 'Desktop: Tauri, React, Vite, whisper.cpp und Piper. Web / PWA: browserbasierte Spracherkennung, Sprachausgabe, KI-API und serverlose Architektur.',
+        },
       ],
     },
   ],

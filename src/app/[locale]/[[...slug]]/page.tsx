@@ -9,6 +9,8 @@ import { ProjectVisual } from '@/components/project-visual';
 import { ProjectScreens } from '@/components/project-screens';
 import { projectMedia } from '@/content/media';
 import { ContactForm } from '@/components/contact-form';
+import { Capabilities } from '@/components/capabilities';
+import { Founder, Principles } from '@/components/studio-sections';
 
 type Params = { locale: string; slug?: string[] };
 const pages = [
@@ -160,32 +162,9 @@ export default async function Page({ params }: { params: Promise<Params> }) {
     return (
       <main id="main">
         <PageIntro eyebrow={c.nav[2]} title={c.aboutTitle} text={c.aboutText} />
-        <section className="founder-section container">
-          <div className="founder-art" aria-hidden="true">
-            <span>
-              e<span className="muted">s</span>.
-            </span>
-            <small>ENZO SENA / SENZ</small>
-          </div>
-          <div>
-            <Eyebrow>{c.founder}</Eyebrow>
-            <h2>Enzo Sena</h2>
-            <p>{c.aboutSecond}</p>
-            <a className="text-link" href={`mailto:${site.email}`}>
-              {site.email}
-              <ArrowUpRight size={18} />
-            </a>
-          </div>
-        </section>
-        <section className="principles container">
-          {c.principles.map((p, i) => (
-            <article key={p.name}>
-              <span className="mono">0{i + 1}</span>
-              <h3>{p.name}</h3>
-              <p>{p.text}</p>
-            </article>
-          ))}
-        </section>
+        <Founder locale={locale} c={c} />
+        <Principles c={c} />
+        <Capabilities content={c.capabilities} />
         <Process c={c} />
         <ContactCTA locale={locale} c={c} />
       </main>
@@ -235,20 +214,25 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         <Link className="case-back text-link" href={`/${locale}/work`}>
           ← {c.nav[0]}
         </Link>
-        <Eyebrow>{i === 2 ? `${c.independentProduct} / ${c.inDevelopment}` : p.category}</Eyebrow>
+        <Eyebrow>
+          {i === 2 ? `${c.independentProduct} / ${c.inDevelopment}` : p.typeLabel || p.category}
+        </Eyebrow>
         <h1>{p.name}</h1>
+        {p.subtitle && <p className="case-subtitle">{p.subtitle}</p>}
         <p className="intro-copy">{p.description}</p>
         <dl className="case-metadata">
           {[
-            [c.caseLabels[5], i === 2 ? c.independentProduct : p.category],
+            [c.caseLabels[5], p.typeLabel || (i === 2 ? c.independentProduct : p.category)],
             [c.caseLabels[6], p.location],
             [c.caseLabels[7], p.category],
-          ].map(([label, value]) => (
-            <div key={label}>
-              <dt>{label}</dt>
-              <dd>{value}</dd>
-            </div>
-          ))}
+          ]
+            .filter(([, value]) => Boolean(value))
+            .map(([label, value]) => (
+              <div key={label}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
         </dl>
       </section>
       <div className="container">
@@ -256,9 +240,15 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         {!projectMedia[slugs[i]].hero && <p className="visual-note">{c.visualNote}</p>}
       </div>
       <section className="case-story container">
-        {[p.description, p.challenge, p.approach, p.solution].map((text, index) => (
+        {[
+          ...[p.description, p.challenge, p.approach, p.solution].map((text, index) => ({
+            title: c.caseLabels[index],
+            text,
+          })),
+          ...(p.sections || []),
+        ].map(({ title, text }, index) => (
           <article key={index}>
-            <Eyebrow number={`0${index + 1}`}>{c.caseLabels[index]}</Eyebrow>
+            <Eyebrow number={String(index + 1).padStart(2, '0')}>{title}</Eyebrow>
             <p>{text}</p>
           </article>
         ))}

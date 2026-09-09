@@ -10,7 +10,7 @@ export function Work({ locale, c, full = false }: { locale: Locale; c: Content; 
       {!full && (
         <div className="section-heading">
           <Eyebrow number="01">{c.selected}</Eyebrow>
-          <span className="work-count">(03)</span>
+          <span className="work-count">({String(c.projects.length).padStart(2, '0')})</span>
           <ActionLink href={`/${locale}/work`}>{c.allWork}</ActionLink>
         </div>
       )}
@@ -32,10 +32,11 @@ export function Work({ locale, c, full = false }: { locale: Locale; c: Content; 
                 <h3>
                   <Link href={`/${locale}/work/${slugs[i]}`}>{p.name}</Link>
                 </h3>
+                {p.subtitle && <p>{p.subtitle}</p>}
                 <p>{p.category}</p>
               </div>
               <span className={i === 2 ? 'project-status' : ''}>
-                {i === 2 ? c.inDevelopment : p.location}
+                {i === 2 ? c.inDevelopment : p.typeLabel || p.location}
               </span>
             </div>
             {!projectMedia[slugs[i]].hero && <p className="visual-note">{c.visualNote}</p>}
@@ -45,85 +46,7 @@ export function Work({ locale, c, full = false }: { locale: Locale; c: Content; 
     </section>
   );
 }
-export function Services({
-  locale,
-  c,
-  full = false,
-}: {
-  locale: Locale;
-  c: Content;
-  full?: boolean;
-}) {
-  return (
-    <section className={`services-section ${full ? 'services-full' : ''}`}>
-      <div className="container services-layout">
-        {!full && (
-          <div className="services-lead">
-            <Eyebrow number="02">{c.nav[1]}</Eyebrow>
-            <h2>{c.servicesTitle}</h2>
-            <p>{c.servicesIntro}</p>
-            <ActionLink href={`/${locale}/services`}>{c.nav[1]}</ActionLink>
-          </div>
-        )}
-        <div className="service-list">
-          {c.services.map((s, i) => (
-            <details className="service-row" key={s.name} open={full || undefined}>
-              <summary>
-                <span className="service-number">0{i + 1}</span>
-                <h3>{s.name}</h3>
-                <span className="service-plus" aria-hidden="true">
-                  +
-                </span>
-              </summary>
-              <div className="service-body">
-                <p>{s.text}</p>
-                <ul>
-                  {s.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-export function Process({ c }: { c: Content }) {
-  return (
-    <section className="process-section container">
-      <div className="section-heading">
-        <Eyebrow>{c.processTitle.split('\n')[0]}</Eyebrow>
-      </div>
-      <h2>{c.processTitle}</h2>
-      <ol className="process-grid">
-        {c.process.map((p, i) => (
-          <li key={p.name}>
-            <span className="mono">0{i + 1}</span>
-            <h3>{p.name}</h3>
-            <p>{p.text}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-export function About({ locale, c }: { locale: Locale; c: Content }) {
-  return (
-    <section className="about-section container">
-      <div>
-        <Eyebrow number="03">{c.nav[2]}</Eyebrow>
-        <h2>{c.aboutTitle}</h2>
-      </div>
-      <div className="about-copy">
-        <p>{c.aboutText}</p>
-        <p className="muted">{c.aboutSecond}</p>
-        <ActionLink href={`/${locale}/about`}>{c.aboutLink}</ActionLink>
-      </div>
-    </section>
-  );
-}
+export { Services, Process, About } from './studio-sections';
 export function ContactCTA({ locale, c }: { locale: Locale; c: Content }) {
   return (
     <section className="contact-cta">

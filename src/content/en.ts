@@ -51,7 +51,7 @@ const en: Content = {
       ],
     },
     {
-      name: 'Product development',
+      name: 'Digital products',
       text: 'A considered path from an early idea to a usable product, with design and engineering working together.',
       items: ['Product definition', 'Interface design', 'Development', 'Launch and iteration'],
     },
@@ -61,7 +61,7 @@ const en: Content = {
     { name: 'Discover', text: 'Understand the business, the audience and what success means.' },
     { name: 'Define', text: 'Set the content, structure and technical direction.' },
     { name: 'Design', text: 'Give the experience a clear visual and interaction language.' },
-    { name: 'Build', text: 'Turn the design into reliable, maintainable software.' },
+    { name: 'Develop', text: 'Turn the design into reliable, maintainable software.' },
     { name: 'Launch', text: 'Test carefully, refine the details and go live.' },
     { name: 'Evolve', text: 'Improve the product as real needs emerge.' },
   ],
@@ -72,6 +72,41 @@ const en: Content = {
     'You work directly with the person building your product. Clear conversations, considered decisions and a shared commitment to getting the details right. Based in Europe, collaborating remotely with businesses worldwide.',
   founder: 'Founder & Developer',
   aboutLink: 'Meet the studio',
+  studio: {
+    statement: 'Good work starts with a conversation.',
+    principlesTitle: 'A few things we stand by.',
+    processLabel: 'How we work',
+  },
+  capabilities: {
+    title: 'Technical capabilities',
+    intro: 'Tools and technologies used across web, software and independent product development.',
+    groups: [
+      {
+        name: 'Frontend Development',
+        items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
+      },
+      {
+        name: 'Backend & Databases',
+        items: ['Python', 'PHP', 'Supabase', 'PostgreSQL', 'SQL', 'REST APIs'],
+      },
+      {
+        name: 'AI & Voice',
+        items: ['Gemini API', 'Speech Recognition', 'Text-to-Speech', 'whisper.cpp', 'Piper'],
+      },
+      {
+        name: 'Desktop & Cross-platform',
+        items: ['Tauri', 'React', 'PWA', 'Web APIs'],
+      },
+      {
+        name: 'CMS & Web Platforms',
+        items: ['WordPress', 'Elementor'],
+      },
+      {
+        name: 'Development & Deployment',
+        items: ['Git', 'GitHub', 'Vercel', 'Cloudflare'],
+      },
+    ],
+  },
   principles: [
     {
       name: 'Clarity first',
@@ -171,6 +206,52 @@ const en: Content = {
       outcome:
         'In development. This is an independent product, not a commissioned client project or a publicly launched service.',
       highlights: ['Workforce management', 'Scheduling and availability', 'Operational workflows'],
+    },
+    {
+      name: 'J.A.R.V.I.S.',
+      subtitle: 'AI Voice Assistant',
+      typeLabel: 'Independent Project',
+      category: 'AI · Desktop · Web Application',
+      description:
+        'A cross-platform AI voice assistant combining speech recognition, conversational AI and real-time interaction across desktop and web.',
+      challenge:
+        'Explore a more natural way to interact with software through voice. The technical challenge is to coordinate speech recognition, AI responses and speech synthesis while keeping the interface clear about what is happening.',
+      approach:
+        'Treat voice and visual feedback as one experience. An interactive, futuristic interface communicates when the assistant is ready, listening, processing or responding.',
+      solution:
+        'An independent personal assistant developed by Enzo Sena in two complementary forms: a desktop application with local voice processing, and a browser-based web/PWA experience with AI integration through an API.',
+      outcome:
+        'An independent exploration of voice, conversational AI and real-time visual feedback across desktop and web. The project brings together desktop development, mobile interfaces, API integration and custom software.',
+      highlights: [
+        'Speech recognition and speech synthesis',
+        'Conversational AI through an API in the web version',
+        'Real-time visual interaction states',
+        'Local voice processing on desktop',
+        'Browser access and mobile support',
+        'Desktop and web/PWA experiences',
+      ],
+      sections: [
+        {
+          title: 'Desktop application',
+          text: 'Built with Tauri and React / Vite. Desktop voice processing uses whisper.cpp for speech-to-text and Piper for text-to-speech, within an interactive interface that makes the assistant’s state visible.',
+        },
+        {
+          title: 'Web / PWA experience',
+          text: 'Accessible through the browser, with an experience adapted for mobile devices. The web version combines browser speech recognition and speech synthesis with a serverless architecture and AI integration through an API.',
+        },
+        {
+          title: 'Voice interaction',
+          text: 'Speech input, processing and spoken responses form the interaction cycle. Visual states — ready, listening, processing and responding — help the user follow each stage in real time.',
+        },
+        {
+          title: 'AI integration',
+          text: 'In the web version, conversational AI is integrated through an API. This connects voice interaction with AI responses within the browser-based experience.',
+        },
+        {
+          title: 'Technologies used',
+          text: 'Desktop: Tauri, React, Vite, whisper.cpp and Piper. Web / PWA: browser speech recognition, speech synthesis, an AI API and a serverless architecture.',
+        },
+      ],
     },
   ],
   form: {

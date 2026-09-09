@@ -18,4 +18,5 @@ export const projectMedia: Record<(typeof slugs)[number], ProjectMedia> = {
   resisol: { screens: [], mobile: [] },
   'marcos-cell': { screens: [], mobile: [] },
   'restaurant-platform': { screens: [], mobile: [] },
+  jarvis: { screens: [], mobile: [] },
 };

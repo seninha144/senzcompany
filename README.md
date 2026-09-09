@@ -30,11 +30,15 @@ With the production server running, `node scripts/visual-audit.mjs` captures des
 - `src/content/{en,pt,fr,it,de}.ts`: complete localized dictionaries, checked against a shared TypeScript content contract.
 - `src/content/index.ts`: studio identity, contact email, social profile configuration and navigation.
 - `src/content/media.ts`: approved project media slots. Empty until real assets are supplied.
-- `src/app/[locale]/[[...slug]]/page.tsx`: shared server-rendered pages and page-specific metadata. All 50 public localized pages are prerendered.
-- `src/components/`: shared navigation, project artwork, service rows, contact form, page primitives and page sections.
+- `src/content/studio-media.ts`: optional founder portrait, with dimensions and localized alternative text.
+- `src/app/[locale]/[[...slug]]/page.tsx`: shared server-rendered pages and page-specific metadata. All 55 public localized pages are prerendered.
+- `src/components/`: shared navigation, project artwork, service tabs, disclosures, contact form, page primitives and page sections.
 - `src/app/globals.css`: design tokens, typography, grid, project compositions, interaction and responsive rules.
+- `src/app/studio.css`: scoped institutional compositions that reuse the existing design tokens.
 - `src/app/api/inquiry/route.ts`: validated inquiry delivery boundary.
 - `tests/site.spec.ts`: route, SEO, responsive, accessibility, keyboard, form and abuse checks.
+- `tests/studio.spec.ts` and `tests/capabilities.spec.ts`: institutional layouts and accessible interactions across languages and viewports.
+- `tests/portfolio-visual.spec.ts`: 94 portfolio screenshot comparisons against the pre-revision Chromium/Windows references.
 
 ## Inquiry delivery
 
@@ -50,6 +54,8 @@ The API checks origin, request content type and size, field lengths and formats,
 
 The supplied brief is the source for project facts. The current compositions are original CSS artwork and explicitly labelled as illustrations; they are not representations of verified production screens. Approved hero and desktop/mobile screenshots can be configured in `src/content/media.ts` and placed in `public/projects/`. The components use `next/image` for supplied raster assets, with responsive sizes and reserved dimensions.
 
+J.A.R.V.I.S. is the fourth project at `/{locale}/work/jarvis`, identified as an independent project. Its localized content describes the desktop voice stack and web/PWA API integration without naming an unconfirmed AI provider or claiming a public launch. Optional project subtitle, type label and additional case-study sections use the existing page components. No location is displayed when none was supplied. Approved artwork and screenshots can be connected through `projectMedia.jarvis`.
+
 Social URLs are intentionally empty in `site.socials`. Add verified Instagram, LinkedIn and GitHub profile URLs there to show them in the footer. No awards, employees, addresses, testimonials, project years or performance metrics have been invented.
 
 Before public launch, supply the approved project screenshots, verified social URLs, a working destination for `hello@senzcompany.com`, and the inquiry delivery endpoint. Review the informational privacy/terms copy against the actual business identity, hosting provider, delivery provider and retention arrangements. The implementation does not claim these pages are a jurisdiction-specific legal policy.
@@ -64,6 +70,10 @@ System fonts avoid render-blocking font requests and font-swap layout shifts. Pr
 
 ## Content and design
 
-Warm paper, charcoal and a muted sage studio accent; the orange surface belongs to the MARCOS CELL illustration. The identity is typographic and can be replaced by an SVG in the shared header/footer. Native HTML service disclosures work without JavaScript. The header and inquiry form are the main interactive client boundaries.
+Warm paper, charcoal and a muted sage studio accent; the orange surface belongs to the MARCOS CELL illustration. The identity is typographic and can be replaced by an SVG in the shared header/footer. Services use accessible vertical tabs with arrow-key, Home and End navigation. The header, service explorer, capability disclosures and inquiry form are interactive client boundaries.
 
 Use `npm run format` after editing. Keep locale schemas aligned and add new public paths to both page generation and the sitemap.
+
+The About page includes a restrained technical-capabilities section after the studio principles. Edit `capabilities` in each locale dictionary to update its six groups. `Capabilities` renders the section on the server; the reusable `Disclosure` component handles independent open/closed state, keyboard-native buttons, synchronized ARIA attributes and reduced-motion-aware CSS expansion. Only technologies supplied by the founder are listed. The founder/photo area is separate from this addition.
+
+The founder composition reserves a portrait area alongside the editorial introduction. Place an approved photograph in `public/images/` and configure `studioMedia.portrait` in `src/content/studio-media.ts`; its `src` starts with `/images/`. Until configured, the area displays the existing typographic monogram. Institutional layouts and motion remain separate from portfolio components and styles.

@@ -2,26 +2,39 @@
 
 ## Build and code
 
-- Next.js 16.3.4 production build passes; 50 localized content pages are prerendered.
+- Next.js 16.3.4 production build passes; 55 localized content pages are prerendered.
 - TypeScript, ESLint and Prettier checks pass.
 - Dependency installation audit reported zero vulnerabilities.
 
 ## Browser coverage
 
-The final Playwright run passed all 19 tests in 52.9 seconds using Chromium on Windows.
+All 49 Playwright tests passed using Chromium on Windows in the latest complete run.
 
-- All 50 pages return HTTP 200 with one primary heading and the correct document language.
-- All 50 pages provide the expected absolute canonical URL, five language alternatives plus `x-default`, and an absolute social image URL.
+- All 55 pages return HTTP 200 with one primary heading and the correct document language.
+- All 55 pages provide the expected absolute canonical URL, five language alternatives plus `x-default`, and an absolute social image URL.
 - Five localized Open Graph images return valid PNG responses.
-- All ten page types in all five languages were checked at 320, 375, 390, 430, 768, 1024, 1280, 1440 and 1920 pixels: 450 combinations, with no horizontal document overflow or browser runtime/console errors.
-- All 50 pages were scanned with axe at 390 and 1440 pixels: 100 scans, with no violations under the WCAG 2 A, WCAG 2 AA and WCAG 2.1 AA rule tags.
+- All eleven page types in all five languages were checked at 320, 375, 390, 430, 768, 1024, 1280, 1440 and 1920 pixels: 495 combinations, with no horizontal document overflow or browser runtime/console errors.
+- All 55 pages were scanned with axe at 390 and 1440 pixels: 110 scans, with no violations under the WCAG 2 A, WCAG 2 AA and WCAG 2.1 AA rule tags.
 - Case-study language switching preserves the equivalent route.
 - Mobile menu opening, initial focus, forward/reverse keyboard focus wrap, Escape dismissal, language selection and navigation cleanup pass. Body scrolling is restored on close and after navigating through the header CTA.
 - Required fields, sending, unavailable integration, delivery failure and success states pass. Success/failure delivery responses are intercepted in browser tests; no real email is sent.
 - API origin checks, malformed data, excessive payload size, honeypot rejection, invalid URL rejection and attempt limiting pass.
 - Root redirect, missing-route responses, sitemap URL count, robots configuration and reduced-motion behavior pass.
 
+## J.A.R.V.I.S. addition
+
+- Independent project identification, localized subtitle and all additional case-study sections checked in five languages.
+- Desktop technologies and web/PWA AI API integration verified against the supplied project brief. No location, provider, release status, clients or metrics invented.
+- Homepage and work listing contain four projects. Case navigation links Restaurant Management Platform to J.A.R.V.I.S., then back to RESISOL. Language switching preserves the new route.
+- Desktop showcase, Portuguese case study and German mobile case study visually reviewed. The new artwork is clearly identified as illustrative.
+
 ## Visual and performance review
+
+The institutional visual revision introduces an asymmetrical founder composition, interactive service tabs, an alternating process timeline and editorial principles. The capabilities accordion retains its accessible interaction. Homepage, About and Services were visually reviewed across desktop, tablet and 320px mobile, including long French and German copy. Six new studio tests cover all five languages, service selection, 15 scoped accessibility scans, keyboard navigation and reduced motion.
+
+Portfolio preservation is covered by 16 visual regression tests with 94 screenshot comparisons against references captured before this revision. All passed with zero differing pixels, including selected work, work listings, all four case studies and project hover states. These references use Chromium on Windows. Source comparisons also confirmed unchanged project content, Work component, case-study rendering and original global styles; new institutional styles are scoped in `studio.css`.
+
+The About technical-capabilities addition passed six new tests: five localized content/responsive/accessibility checks and one keyboard/reduced-motion interaction check. All six disclosures were opened at every requested width in all five languages, with 45 scoped axe scans returning no violations. Verified initial collapsed state, independent expansion, linked ARIA IDs, hidden/inert closed content, arrow rotation, Enter/Space activation, focus preservation and rapid toggling. Desktop, French tablet and German 320px mobile layouts were reviewed visually. Production build, typecheck and lint passed after the addition.
 
 Desktop and mobile home compositions, German mobile wrapping, project presentation, and the desktop inquiry page were inspected visually. Corrections included a German case-navigation overflow, small-label contrast, the mobile project-caption overlap and a scroll-lock edge case.
 
