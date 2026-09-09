@@ -1,0 +1,215 @@
+import type { Content } from './types';
+const it: Content = {
+  nav: ['Progetti', 'Servizi', 'Studio', 'Contatti'],
+  start: 'Iniziamo un progetto',
+  language: 'Lingua',
+  menu: 'Menu',
+  close: 'Chiudi',
+  skip: 'Vai al contenuto',
+  eyebrow: 'Studio digitale indipendente',
+  headline: ['Idee chiare.', 'Digitale fatto bene.'],
+  intro:
+    'Siti web, applicazioni web e software su misura. Design ragionato. Sviluppo accurato. Pensati per la tua attività.',
+  viewWork: 'Scopri i progetti',
+  location: 'In Europa',
+  worldwide: 'Al lavoro, ovunque',
+  selected: 'Progetti selezionati',
+  workIntro:
+    'Attività diverse. La stessa cura dei dettagli. Una selezione di lavori per clienti e prodotti indipendenti.',
+  allWork: 'Tutti i progetti',
+  project: 'Scopri il progetto',
+  inDevelopment: 'In sviluppo',
+  independentProduct: 'Prodotto indipendente',
+  visualNote: 'Composizione illustrativa del progetto · schermate originali in arrivo',
+  servicesTitle: 'L’idea giusta.\nRealizzata con cura.',
+  servicesIntro:
+    'Dal primo sito a un’applicazione essenziale per l’attività, portiamo chiarezza nel processo e attenzione a ogni dettaglio.',
+  services: [
+    {
+      name: 'Siti web',
+      text: 'Una presenza chiara e curata per le imprese che vogliono mostrare ciò che sanno fare meglio.',
+      items: [
+        'Siti aziendali',
+        'Pagine di presentazione',
+        'Siti multilingue',
+        'Siti marketing ad alte prestazioni',
+      ],
+    },
+    {
+      name: 'Applicazioni web',
+      text: 'Interfacce utili che semplificano il lavoro complesso, progettate intorno a chi le usa.',
+      items: [
+        'Pannelli di controllo',
+        'Strumenti interni',
+        'Portali clienti',
+        'Piattaforme gestionali',
+      ],
+    },
+    {
+      name: 'Software su misura',
+      text: 'Quando gli strumenti standard non bastano, un software che segue il modo in cui lavora la tua azienda.',
+      items: [
+        'Applicazioni personalizzate',
+        'Sistemi aziendali',
+        'Strumenti operativi',
+        'Prototipi software',
+      ],
+    },
+    {
+      name: 'Sviluppo di prodotto',
+      text: 'Dalla prima idea a un prodotto utilizzabile, con design e sviluppo che lavorano insieme.',
+      items: [
+        'Definizione del prodotto',
+        'Design delle interfacce',
+        'Sviluppo',
+        'Lancio e miglioramento',
+      ],
+    },
+  ],
+  processTitle: 'Un percorso chiaro,\ndal dialogo al lancio.',
+  process: [
+    { name: 'Scoprire', text: 'Comprendere l’attività, il pubblico e gli obiettivi.' },
+    { name: 'Definire', text: 'Stabilire contenuti, struttura e direzione tecnica.' },
+    {
+      name: 'Progettare',
+      text: 'Dare all’esperienza un linguaggio visivo e di interazione coerente.',
+    },
+    { name: 'Sviluppare', text: 'Trasformare il design in software affidabile e mantenibile.' },
+    { name: 'Lanciare', text: 'Testare, rifinire i dettagli e pubblicare.' },
+    { name: 'Evolvere', text: 'Migliorare il prodotto quando emergono nuove esigenze.' },
+  ],
+  aboutTitle: 'Indipendente,\nper scelta.',
+  aboutText:
+    'SENZ è uno studio digitale indipendente fondato da Enzo Sena. Progettiamo e sviluppiamo siti web, applicazioni web e software su misura per aziende di diversi mercati.',
+  aboutSecond:
+    'Lavori direttamente con chi costruisce il tuo prodotto. Dialogo chiaro, decisioni ponderate e un impegno condiviso per i dettagli. Dall’Europa, collaboriamo da remoto con aziende in tutto il mondo.',
+  founder: 'Fondatore e sviluppatore',
+  aboutLink: 'Conosci lo studio',
+  principles: [
+    {
+      name: 'Prima la chiarezza',
+      text: 'Un buon prodotto nasce dalla comprensione di ciò che deve fare.',
+    },
+    { name: 'Cura dei dettagli', text: 'L’esperienza d’uso conta quanto il funzionamento.' },
+    { name: 'Fatto per durare', text: 'Basi solide rendono più semplice il passo successivo.' },
+  ],
+  contactTitle: 'Creiamo\nqualcosa di utile.',
+  contactIntro:
+    'Raccontaci cosa hai in mente. Un’idea, una sfida o un progetto pronto a partire. Cominciamo da qui.',
+  emailLabel: 'Preferisci scriverci via email?',
+  footerLine: 'Design ragionato.\nSviluppo accurato.',
+  elsewhere: 'Altrove',
+  rights: 'Tutti i diritti riservati.',
+  privacy: 'Privacy',
+  terms: 'Condizioni',
+  legalNote: 'Informazioni sul sito',
+  privacyText: [
+    'Questo sito è gestito da SENZ, uno studio digitale indipendente fondato da Enzo Sena. Per domande sulla privacy: hello@senzcompany.com.',
+    'Il modulo richiede nome, email e dettagli del progetto. Azienda, paese e sito esistente sono facoltativi. Quando l’invio è configurato, i dati vengono trasmessi al fornitore di recapito dello studio per rispondere alla richiesta.',
+    'Questa versione non utilizza cookie pubblicitari né strumenti di analisi. Il fornitore di hosting può trattare registri tecnici per gestire e proteggere il sito.',
+    'Non includere dati personali sensibili. Contatta lo studio per chiedere accesso, rettifica o cancellazione dei dati della richiesta.',
+  ],
+  termsText: [
+    'Questo sito presenta SENZ e il suo lavoro. I contenuti sono informativi e non costituiscono un’offerta vincolante.',
+    'Ambito, compensi, consegne, proprietà e assistenza vengono concordati separatamente per iscritto prima dell’inizio dei lavori.',
+    'I nomi dei progetti e i materiali di terzi appartengono ai rispettivi proprietari. Le composizioni illustrative sono identificate e non sono schermate verificate dei prodotti.',
+    'Per domande sul sito o per parlare di un progetto: hello@senzcompany.com.',
+  ],
+  caseLabels: [
+    'Panoramica',
+    'Sfida',
+    'Approccio',
+    'Soluzione',
+    'Risultato',
+    'Tipo di progetto',
+    'Luogo',
+    'Servizi',
+    'Viste selezionate',
+    'Aspetti tecnici',
+  ],
+  nextProject: 'Prossimo progetto',
+  projects: [
+    {
+      name: 'RESISOL',
+      category: 'Sito aziendale e multilingue',
+      location: 'Svizzera',
+      description:
+        'Una presenza digitale multilingue per un’impresa edile svizzera, con servizi presentati con chiarezza in più lingue europee.',
+      challenge: 'Presentare chiaramente i servizi edili a clienti che parlano lingue diverse.',
+      approach:
+        'Organizzare l’esperienza intorno ai servizi cercati dai clienti, mantenendo una navigazione chiara in ogni lingua.',
+      solution:
+        'Un sito aziendale multilingue che presenta l’attività e aiuta i visitatori a trovare le informazioni necessarie.',
+      outcome:
+        'Una presenza chiara che facilita la scoperta dei servizi in più lingue europee. Non sono disponibili metriche di rendimento verificate.',
+      highlights: [
+        'Struttura dei contenuti multilingue',
+        'Layout adattabili',
+        'Navigazione chiara dei servizi',
+      ],
+    },
+    {
+      name: 'MARCOS CELL',
+      category: 'Sito commerciale',
+      location: 'Brasile',
+      description:
+        'Un sito diretto e accessibile per riparazioni di telefoni e accessori. Pensato per avvicinare un’attività locale al suo prossimo cliente.',
+      challenge: 'Riunire riparazioni, prodotti, recensioni e contatti in un percorso semplice.',
+      approach:
+        'Dare priorità ai servizi disponibili, all’offerta dell’attività e alle modalità di contatto.',
+      solution:
+        'Un sito commerciale che riunisce riparazioni e accessori in un’esperienza orientata al contatto.',
+      outcome:
+        'Uno spazio mirato per scoprire l’attività e contattarla. Le conversioni non sono state misurate in modo indipendente.',
+      highlights: [
+        'Esperienza pensata per il mobile',
+        'Presentazione di servizi e prodotti',
+        'Contatti accessibili',
+      ],
+    },
+    {
+      name: 'Piattaforma di gestione ristoranti',
+      category: 'Applicazione web · Sviluppo di prodotto',
+      location: 'Prodotto indipendente',
+      description:
+        'Un prodotto indipendente che esplora un modo più chiaro di gestire personale, turni e operazioni nella ristorazione.',
+      challenge:
+        'Coordinare dipendenti, disponibilità e operazioni quotidiane senza perdere di vista il gruppo.',
+      approach:
+        'Esplorare flussi collegati per la pianificazione del personale e la gestione operativa, concentrati sulle esigenze quotidiane.',
+      solution:
+        'Una piattaforma in sviluppo per dipendenti, turni, disponibilità e processi gestionali. Funzionalità e ambito potranno evolvere.',
+      outcome:
+        'In sviluppo. È un prodotto indipendente, non un progetto commissionato da un cliente né un servizio già lanciato.',
+      highlights: ['Gestione del personale', 'Turni e disponibilità', 'Flussi operativi'],
+    },
+  ],
+  form: {
+    name: 'Nome',
+    email: 'Email',
+    company: 'Azienda',
+    country: 'Paese',
+    need: 'Di cosa hai bisogno?',
+    budget: 'Budget indicativo',
+    description: 'Raccontaci il tuo progetto',
+    website: 'Sito attuale',
+    optional: 'facoltativo',
+    select: 'Seleziona un’opzione',
+    other: 'Altro',
+    unsure: 'Da definire',
+    under: 'Meno di 1.000 €',
+    submit: 'Invia la richiesta',
+    sending: 'Invio in corso…',
+    success: 'Grazie. Abbiamo ricevuto la richiesta e risponderemo via email.',
+    error: 'Invio non riuscito. Riprova o contattaci via email.',
+    unavailable: 'Il modulo non è ancora collegato. Invia i dettagli a hello@senzcompany.com.',
+    consent: 'I tuoi dati serviranno solo a rispondere alla richiesta. Leggi la nostra',
+    required: 'Compila i campi obbligatori.',
+    invalid: 'Controlla l’email e l’indirizzo del sito.',
+    descriptionHint: 'L’idea, gli obiettivi, i tempi — quello che sai già.',
+  },
+  notFound: 'Pagina non trovata.',
+  home: 'Torna alla pagina iniziale',
+  seo: 'SENZ è uno studio digitale indipendente che crea siti web, applicazioni web e software su misura per aziende di tutto il mondo.',
+};
+export default it;
