@@ -1,3 +1,4 @@
+import { LuzenVisual } from './luzen-visual';
 import type { Content } from '@/content';
 import Image from 'next/image';
 import { slugs, type Locale } from '@/content/types';
@@ -16,6 +17,7 @@ export function ProjectVisual({
   detail?: boolean;
   locale?: Locale;
 }) {
+  if (index === 0) return <LuzenVisual locale={locale} detail={detail} />;
   const p = c.projects[index];
   const media = projectMedia[slugs[index]].hero;
   if (media)
@@ -44,34 +46,7 @@ export function ProjectVisual({
       role="img"
       aria-label={`${p.name} — ${c.visualNote}`}
     >
-      {index === 0 ? (
-        <>
-          <div className="architecture">
-            <div className="building building-back" />
-            <div className="building building-main">
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="building building-side" />
-            <div className="building-shadow" />
-          </div>
-          <div className="resisol-type">RESISOL</div>
-          <div className="visual-bottom">
-            <span>{p.location}</span>
-            <span>{p.category}</span>
-          </div>
-        </>
-      ) : index === 1 ? (
+      {index === 1 ? (
         <>
           <div className="cell-brand">
             MARCOS

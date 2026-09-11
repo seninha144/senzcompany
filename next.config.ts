@@ -2,7 +2,16 @@ import type { NextConfig } from 'next';
 const config: NextConfig = {
   poweredByHeader: false,
   async redirects() {
-    return [{ source: '/', destination: '/en', permanent: true }];
+    return [
+      { source: '/', destination: '/en', permanent: true },
+      {
+        source: '/:locale(en|pt|fr|it|de)/work/resisol',
+        destination: '/:locale/work/luzen',
+        permanent: true,
+      },
+      { source: '/work/resisol', destination: '/en/work/luzen', permanent: true },
+      { source: '/work/luzen', destination: '/en/work/luzen', permanent: true },
+    ];
   },
   async headers() {
     return [

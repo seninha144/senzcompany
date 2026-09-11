@@ -37,7 +37,7 @@ try {
       });
     }
   }
-  for (const path of ['contact', 'work/resisol', 'about', 'services']) {
+  for (const path of ['contact', 'work/luzen', 'about', 'services']) {
     await page.goto(`http://localhost:3000/en/${path}`);
     await page.screenshot({
       path: fileURLToPath(new URL(`en-${path.replaceAll('/', '-')}.png`, output)),

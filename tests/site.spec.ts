@@ -122,16 +122,16 @@ test('fourth project appears in work lists and connects the case-study sequence'
   await page.goto('/en/work/restaurant-platform');
   await page.locator('.next-project > a').click();
   await expect(page).toHaveURL('/en/work/jarvis');
-  await expect(page.locator('.next-project > a')).toHaveAttribute('href', '/en/work/resisol');
+  await expect(page.locator('.next-project > a')).toHaveAttribute('href', '/en/work/luzen');
   await page.selectOption('#desktop-language', 'pt');
   await expect(page).toHaveURL('/pt/work/jarvis');
 });
 
 test('language selector preserves case study and mobile menu manages focus', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto('/en/work/resisol');
+  await page.goto('/en/work/luzen');
   await page.selectOption('#desktop-language', 'fr');
-  await expect(page).toHaveURL('/fr/work/resisol');
+  await expect(page).toHaveURL('/fr/work/luzen');
   await page.setViewportSize({ width: 390, height: 844 });
   const menu = page.locator('.menu-button');
   await menu.click();
@@ -149,7 +149,7 @@ test('language selector preserves case study and mobile menu manages focus', asy
   expect(await page.evaluate(() => document.body.style.overflow)).not.toBe('hidden');
   await menu.click();
   await page.selectOption('#mobile-language', 'de');
-  await expect(page).toHaveURL('/de/work/resisol');
+  await expect(page).toHaveURL('/de/work/luzen');
   await expect(page.locator('#mobile-navigation')).toBeHidden();
   await menu.click();
   await page.locator('.header-cta').click();

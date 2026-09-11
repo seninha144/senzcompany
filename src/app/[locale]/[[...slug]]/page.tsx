@@ -1,3 +1,5 @@
+import { LuzenCase } from '@/components/luzen-case';
+import { luzenMedia } from '@/content/luzen-media';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -44,12 +46,15 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
         : path === 'terms'
           ? c.terms
           : c.nav[navigation.indexOf(path)];
-  const title = label
-    ? `${label} — SENZ`
-    : `SENZ — ${c.services
-        .slice(0, 3)
-        .map((s) => s.name)
-        .join(', ')}`;
+  const title =
+    projectIndex === 0
+      ? `${label} ? ${c.projects[0].category} | SENZ`
+      : label
+        ? `${label} — SENZ`
+        : `SENZ — ${c.services
+            .slice(0, 3)
+            .map((s) => s.name)
+            .join(', ')}`;
   const description =
     projectIndex >= 0
       ? c.projects[projectIndex].description
@@ -62,6 +67,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
             : c.seo;
   const suffix = path ? `/${path}` : '';
   const url = `${site.url}/${locale}${suffix}`;
+  const socialImage =
+    projectIndex === 0 && luzenMedia.cover ? luzenMedia.cover : `/${locale}/opengraph-image`;
   return {
     metadataBase: new URL(site.url),
     title,
@@ -81,13 +88,13 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       type: 'website',
       locale,
       alternateLocale: locales.filter((l) => l !== locale),
-      images: [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630, alt: title }],
+      images: [{ url: socialImage, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [`/${locale}/opengraph-image`],
+      images: [socialImage],
     },
     robots: { index: true, follow: true },
   };
@@ -206,6 +213,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
     );
   const i = slugs.indexOf(slug[1] as (typeof slugs)[number]);
   if (i < 0) notFound();
+  if (i === 0) return <LuzenCase locale={locale} c={c} />;
   const p = c.projects[i];
   const next = (i + 1) % slugs.length;
   return (

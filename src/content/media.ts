@@ -16,7 +16,7 @@ export type ProjectMedia = {
 
 // Only add images approved for publication. Paths are relative to public/.
 export const projectMedia: Record<(typeof slugs)[number], ProjectMedia> = {
-  resisol: { screens: [], mobile: [] },
+  luzen: { screens: [], mobile: [] },
   'marcos-cell': {
     hero: {
       src: '/images/projects/marcos_cell.png',

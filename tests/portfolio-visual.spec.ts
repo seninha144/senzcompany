@@ -24,6 +24,7 @@ for (const locale of locales) {
         },
       );
       for (const path of ['', ...slugs.map((slug) => `/${slug}`)]) {
+        await page.emulateMedia({ reducedMotion: path === '/luzen' ? 'reduce' : 'no-preference' });
         await page.goto(`/${locale}/work${path}`);
         await loadImages(page);
         await expect(page).toHaveScreenshot(

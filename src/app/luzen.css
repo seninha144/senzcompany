@@ -1,0 +1,99 @@
+.luzen-cover {
+  background: #e8e5dc;
+}
+.luzen-placeholder {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  text-align: center;
+}
+.luzen-placeholder > span {
+  font-size: clamp(48px, 11vw, 170px);
+  letter-spacing: 0.16em;
+  margin-right: -0.16em;
+  font-weight: 400;
+}
+.luzen-placeholder p {
+  color: var(--ink);
+  font-size: 12px;
+}
+.luzen-editorial {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(24px, 6vw, 100px);
+  padding-block: var(--section);
+}
+.luzen-case h2 {
+  font-size: clamp(26px, 3vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.luzen-editorial > p,
+.luzen-responsive p {
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.6;
+  max-width: 720px;
+}
+.luzen-detail {
+  position: relative;
+  aspect-ratio: 16 / 10;
+}
+.luzen-detail img,
+.luzen-mobile img {
+  object-fit: contain;
+}
+.luzen-responsive {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  padding-block: 40px;
+}
+.luzen-responsive > div:last-child {
+  flex: 1;
+}
+.luzen-responsive h2 {
+  margin-bottom: 28px;
+}
+.luzen-mobile {
+  position: relative;
+  flex: 0 0 35%;
+  aspect-ratio: 9 / 19;
+}
+.luzen-loop {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #e8e5dc;
+}
+.luzen-loop video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.luzen-loop button {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 12px 18px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .luzen-editorial {
+    grid-template-columns: 1fr;
+  }
+  .luzen-responsive {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .luzen-mobile {
+    width: 80%;
+    flex-basis: auto;
+  }
+}

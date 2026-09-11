@@ -1,3 +1,4 @@
+import { luzen } from './luzen';
 import type { Content } from './types';
 const it: Content = {
   nav: ['Progetti', 'Servizi', 'Studio', 'Contatti'],
@@ -165,25 +166,7 @@ const it: Content = {
   ],
   nextProject: 'Prossimo progetto',
   projects: [
-    {
-      name: 'RESISOL',
-      category: 'Sito aziendale e multilingue',
-      location: 'Svizzera',
-      description:
-        'Una presenza digitale multilingue per un’impresa edile svizzera, con servizi presentati con chiarezza in più lingue europee.',
-      challenge: 'Presentare chiaramente i servizi edili a clienti che parlano lingue diverse.',
-      approach:
-        'Organizzare l’esperienza intorno ai servizi cercati dai clienti, mantenendo una navigazione chiara in ogni lingua.',
-      solution:
-        'Un sito aziendale multilingue che presenta l’attività e aiuta i visitatori a trovare le informazioni necessarie.',
-      outcome:
-        'Una presenza chiara che facilita la scoperta dei servizi in più lingue europee. Non sono disponibili metriche di rendimento verificate.',
-      highlights: [
-        'Struttura dei contenuti multilingue',
-        'Layout adattabili',
-        'Navigazione chiara dei servizi',
-      ],
-    },
+    luzen.it.project,
     {
       name: 'MARCOS CELL',
       category: 'Sito commerciale',

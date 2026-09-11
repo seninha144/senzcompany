@@ -39,7 +39,9 @@ export function Work({ locale, c, full = false }: { locale: Locale; c: Content; 
                 {i === 2 ? c.inDevelopment : p.typeLabel || p.location}
               </span>
             </div>
-            {!projectMedia[slugs[i]].hero && <p className="visual-note">{c.visualNote}</p>}
+            {i !== 0 && !projectMedia[slugs[i]].hero && (
+              <p className="visual-note">{c.visualNote}</p>
+            )}
           </article>
         ))}
       </div>

@@ -52,7 +52,7 @@ The API checks origin, request content type and size, field lengths and formats,
 
 ## Project assets and publication inputs
 
-The supplied brief is the source for project facts. Marcos Cell, Restaurant Management Platform and J.A.R.V.I.S. use the founder-supplied screenshots in `public/images/projects/`, configured in `src/content/media.ts`. Their full interfaces are displayed without cropping. RESISOL retains its clearly labelled CSS illustration until a screenshot is supplied. Additional desktop/mobile screenshots can use the existing media slots. The components use `next/image` with responsive sizes and reserved dimensions. The original supplied files remain in `images/`.
+The supplied brief is the source for project facts. Marcos Cell, Restaurant Management Platform and J.A.R.V.I.S. use the founder-supplied screenshots in `public/images/projects/`, configured in `src/content/media.ts`. Their full interfaces are displayed without cropping. LUZEN replaces the former RESISOL entry as a concept / independent jewelry project. Its optional media lives in `public/projects/luzen/`; see the README in that directory for exact filenames. Additional desktop/mobile screenshots can use the existing media slots. The components use `next/image` with responsive sizes and reserved dimensions. The original supplied files remain in `images/`.
 
 J.A.R.V.I.S. is the fourth project at `/{locale}/work/jarvis`, identified as an independent project. Its localized content describes the desktop voice stack and web/PWA API integration without naming an unconfirmed AI provider or claiming a public launch. Optional project subtitle, type label and additional case-study sections use the existing page components. No location is displayed when none was supplied. Approved artwork and screenshots can be connected through `projectMedia.jarvis`.
 
@@ -77,3 +77,11 @@ Use `npm run format` after editing. Keep locale schemas aligned and add new publ
 The About page includes a restrained technical-capabilities section after the studio principles. Edit `capabilities` in each locale dictionary to update its six groups. `Capabilities` renders the section on the server; the reusable `Disclosure` component handles independent open/closed state, keyboard-native buttons, synchronized ARIA attributes and reduced-motion-aware CSS expansion. Only technologies supplied by the founder are listed. The founder/photo area is separate from this addition.
 
 The founder composition displays the supplied portrait from `public/images/studio/enzo_foto2.jpeg`. Configure `studioMedia.portrait` in `src/content/studio-media.ts` to replace it; setting it to `null` restores the typographic monogram. Institutional layouts and motion remain separate from portfolio components and styles.
+
+## LUZEN
+
+Localized copy is in `src/content/luzen.ts`, referenced by the five existing dictionaries. The dedicated `LuzenCase` reuses SENZ navigation, tokens and project navigation. Optional images and video are detected by `src/content/luzen-media.ts` at build time. Rebuild after adding files. No stack or implemented store features are assumed.
+
+Old localized `/work/resisol` addresses permanently redirect to `/work/luzen`. Legacy unused CSS selectors and historical visual references remain for safety; they are not rendered. Other project content remains unchanged, with J.A.R.V.I.S. next-project navigation now pointing to LUZEN.
+
+Run `node scripts/test-project-loop.mjs` to verify the video using a temporary local fixture and a generated test-only recording. Stop the development server first; the script uses port 3001 and removes its fixture route on completion.

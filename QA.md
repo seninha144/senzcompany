@@ -1,4 +1,4 @@
-# Verification — 9 September 2026
+# Verification — 11 September 2026
 
 ## Build and code
 
@@ -8,7 +8,7 @@
 
 ## Browser coverage
 
-All 49 Playwright tests passed using Chromium on Windows in the latest complete run.
+The suite now contains 54 Playwright tests using Chromium on Windows. The LUZEN run passed 53 tests; one screenshot write encountered a transient Windows filesystem error and passed on its targeted rerun. A subsequent normal run of all 16 portfolio visual tests passed, with 94 screenshot comparisons.
 
 - All 55 pages return HTTP 200 with one primary heading and the correct document language.
 - All 55 pages provide the expected absolute canonical URL, five language alternatives plus `x-default`, and an absolute social image URL.
@@ -25,10 +25,14 @@ All 49 Playwright tests passed using Chromium on Windows in the latest complete 
 
 - Independent project identification, localized subtitle and all additional case-study sections checked in five languages.
 - Desktop technologies and web/PWA AI API integration verified against the supplied project brief. No location, provider, release status, clients or metrics invented.
-- Homepage and work listing contain four projects. Case navigation links Restaurant Management Platform to J.A.R.V.I.S., then back to RESISOL. Language switching preserves the new route.
+- Homepage and work listing contain four projects. Case navigation links Restaurant Management Platform to J.A.R.V.I.S., then to LUZEN. Language switching preserves the route.
 - Desktop showcase, Portuguese case study and German mobile case study visually reviewed. The new artwork is clearly identified as illustrative.
 
 ## Visual and performance review
+
+LUZEN replaces the former first project in all five languages. Its localized routes, canonical metadata, old-route redirects, sitemap entries and absent-media fallback passed browser checks. Desktop, French tablet and German 320px layouts were visually reviewed. Other project copy was compared against a pre-change copy and remains identical; J.A.R.V.I.S. next-project navigation now references LUZEN. Portfolio snapshots were intentionally updated for the replacement.
+
+The isolated `scripts/test-project-loop.mjs` check used a temporary generated WebM fixture, then removed its test route. It verified deferred media requests, actual muted looping playback, inline playback without native controls, manual pause/resume, offscreen pause and reduced-motion poster behavior. No test media is published. The final production build succeeds without any LUZEN media files. Build, typecheck, lint and formatting passed.
 
 The institutional visual revision introduces an asymmetrical founder composition, interactive service tabs, an alternating process timeline and editorial principles. The capabilities accordion retains its accessible interaction. Homepage, About and Services were visually reviewed across desktop, tablet and 320px mobile, including long French and German copy. Six new studio tests cover all five languages, service selection, 15 scoped accessibility scans, keyboard navigation and reduced motion.
 
@@ -46,7 +50,7 @@ Run `node scripts/visual-audit.mjs` with the production server running to genera
 
 ## Remaining publication inputs
 
-- A RESISOL screenshot and optional additional desktop/mobile project screenshots. The other three project covers already use supplied screenshots.
+- LUZEN media listed in `public/projects/luzen/README.md`. The other three project covers already use supplied screenshots.
 - Verified studio social profile URLs: empty configuration entries stay hidden.
 - An operational studio mailbox and an HTTPS inquiry delivery endpoint: without configuration the form clearly reports that online delivery is unavailable.
 - Business-specific privacy/terms details, actual provider and retention arrangements, and deployment/domain configuration.
