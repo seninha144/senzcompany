@@ -29,7 +29,7 @@ With the production server running, `node scripts/visual-audit.mjs` captures des
 
 - `src/content/{en,pt,fr,it,de}.ts`: complete localized dictionaries, checked against a shared TypeScript content contract.
 - `src/content/index.ts`: studio identity, contact email, social profile configuration and navigation.
-- `src/content/media.ts`: approved project media slots. Empty until real assets are supplied.
+- `src/content/media.ts`: supplied project screenshots and optional additional media slots.
 - `src/content/studio-media.ts`: optional founder portrait, with dimensions and localized alternative text.
 - `src/app/[locale]/[[...slug]]/page.tsx`: shared server-rendered pages and page-specific metadata. All 55 public localized pages are prerendered.
 - `src/components/`: shared navigation, project artwork, service tabs, disclosures, contact form, page primitives and page sections.
@@ -38,7 +38,7 @@ With the production server running, `node scripts/visual-audit.mjs` captures des
 - `src/app/api/inquiry/route.ts`: validated inquiry delivery boundary.
 - `tests/site.spec.ts`: route, SEO, responsive, accessibility, keyboard, form and abuse checks.
 - `tests/studio.spec.ts` and `tests/capabilities.spec.ts`: institutional layouts and accessible interactions across languages and viewports.
-- `tests/portfolio-visual.spec.ts`: 94 portfolio screenshot comparisons against the pre-revision Chromium/Windows references.
+- `tests/portfolio-visual.spec.ts`: 94 portfolio screenshot comparisons using Chromium/Windows references, updated when project visuals are intentionally changed.
 
 ## Inquiry delivery
 
@@ -52,7 +52,7 @@ The API checks origin, request content type and size, field lengths and formats,
 
 ## Project assets and publication inputs
 
-The supplied brief is the source for project facts. The current compositions are original CSS artwork and explicitly labelled as illustrations; they are not representations of verified production screens. Approved hero and desktop/mobile screenshots can be configured in `src/content/media.ts` and placed in `public/projects/`. The components use `next/image` for supplied raster assets, with responsive sizes and reserved dimensions.
+The supplied brief is the source for project facts. Marcos Cell, Restaurant Management Platform and J.A.R.V.I.S. use the founder-supplied screenshots in `public/images/projects/`, configured in `src/content/media.ts`. Their full interfaces are displayed without cropping. RESISOL retains its clearly labelled CSS illustration until a screenshot is supplied. Additional desktop/mobile screenshots can use the existing media slots. The components use `next/image` with responsive sizes and reserved dimensions. The original supplied files remain in `images/`.
 
 J.A.R.V.I.S. is the fourth project at `/{locale}/work/jarvis`, identified as an independent project. Its localized content describes the desktop voice stack and web/PWA API integration without naming an unconfirmed AI provider or claiming a public launch. Optional project subtitle, type label and additional case-study sections use the existing page components. No location is displayed when none was supplied. Approved artwork and screenshots can be connected through `projectMedia.jarvis`.
 
@@ -76,4 +76,4 @@ Use `npm run format` after editing. Keep locale schemas aligned and add new publ
 
 The About page includes a restrained technical-capabilities section after the studio principles. Edit `capabilities` in each locale dictionary to update its six groups. `Capabilities` renders the section on the server; the reusable `Disclosure` component handles independent open/closed state, keyboard-native buttons, synchronized ARIA attributes and reduced-motion-aware CSS expansion. Only technologies supplied by the founder are listed. The founder/photo area is separate from this addition.
 
-The founder composition reserves a portrait area alongside the editorial introduction. Place an approved photograph in `public/images/` and configure `studioMedia.portrait` in `src/content/studio-media.ts`; its `src` starts with `/images/`. Until configured, the area displays the existing typographic monogram. Institutional layouts and motion remain separate from portfolio components and styles.
+The founder composition displays the supplied portrait from `public/images/studio/enzo_foto2.jpeg`. Configure `studioMedia.portrait` in `src/content/studio-media.ts` to replace it; setting it to `null` restores the typographic monogram. Institutional layouts and motion remain separate from portfolio components and styles.

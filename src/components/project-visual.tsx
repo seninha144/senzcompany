@@ -20,7 +20,10 @@ export function ProjectVisual({
   const media = projectMedia[slugs[index]].hero;
   if (media)
     return (
-      <div className={`project-visual ${detail ? 'detail-visual' : ''}`}>
+      <div
+        className={`project-visual ${detail ? 'detail-visual' : ''}`}
+        style={{ background: media.background }}
+      >
         <Image
           src={media.src}
           alt={media.alt[locale]}
@@ -30,7 +33,7 @@ export function ProjectVisual({
               ? '(max-width: 767px) 100vw, 90vw'
               : '(max-width: 767px) 100vw, 45vw'
           }
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'contain' }}
           preload={detail}
         />
       </div>

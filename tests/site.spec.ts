@@ -38,6 +38,8 @@ for (const locale of locales) {
     expect(og.headers()['content-type']).toContain('image/png');
   });
   test(`${locale}: requested widths and browser errors`, async ({ page }) => {
+    // This check loads 99 pages, including optimized raster images at nine widths.
+    test.setTimeout(180000);
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     page.on('console', (message) => {
@@ -60,6 +62,14 @@ for (const locale of locales) {
       await page.setViewportSize({ width, height: 1000 });
       for (const path of paths) {
         await page.goto(`/${locale}${path}`);
+        await page.evaluate(() =>
+          Promise.all(
+            document
+              .getAnimations()
+              .filter((animation) => animation.effect?.getComputedTiming().iterations !== Infinity)
+              .map((animation) => animation.finished),
+          ),
+        );
         const result = await new AxeBuilder({ page })
           .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
           .analyze();

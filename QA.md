@@ -32,7 +32,9 @@ All 49 Playwright tests passed using Chromium on Windows in the latest complete 
 
 The institutional visual revision introduces an asymmetrical founder composition, interactive service tabs, an alternating process timeline and editorial principles. The capabilities accordion retains its accessible interaction. Homepage, About and Services were visually reviewed across desktop, tablet and 320px mobile, including long French and German copy. Six new studio tests cover all five languages, service selection, 15 scoped accessibility scans, keyboard navigation and reduced motion.
 
-Portfolio preservation is covered by 16 visual regression tests with 94 screenshot comparisons against references captured before this revision. All passed with zero differing pixels, including selected work, work listings, all four case studies and project hover states. These references use Chromium on Windows. Source comparisons also confirmed unchanged project content, Work component, case-study rendering and original global styles; new institutional styles are scoped in `studio.css`.
+At completion of the institutional revision, 16 visual regression tests with 94 screenshot comparisons passed with zero differing pixels against the pre-revision references, including selected work, work listings, all four case studies and project hover states. Source comparisons also confirmed unchanged project content, Work component, case-study rendering and original global styles; new institutional styles are scoped in `studio.css`.
+
+The subsequent, explicitly requested image integration connects the supplied founder portrait and Marcos Cell, Restaurant Management Platform and J.A.R.V.I.S. screenshots. Originals remain in `images/`; public copies use the existing media slots with five-language alternative text. Project screenshots use contain sizing to preserve the entire interface. About and Work were checked at 320, 768 and 1440 pixels: all images decoded successfully with no horizontal overflow. Portfolio references were deliberately refreshed for these approved image changes and now wait for image decoding before capture. These references use Chromium on Windows.
 
 The About technical-capabilities addition passed six new tests: five localized content/responsive/accessibility checks and one keyboard/reduced-motion interaction check. All six disclosures were opened at every requested width in all five languages, with 45 scoped axe scans returning no violations. Verified initial collapsed state, independent expansion, linked ARIA IDs, hidden/inert closed content, arrow rotation, Enter/Space activation, focus preservation and rapid toggling. Desktop, French tablet and German 320px mobile layouts were reviewed visually. Production build, typecheck and lint passed after the addition.
 
@@ -44,7 +46,7 @@ Run `node scripts/visual-audit.mjs` with the production server running to genera
 
 ## Remaining publication inputs
 
-- Approved project screenshots: current artwork is explicitly illustrative. Responsive hero, desktop and mobile media slots are implemented.
+- A RESISOL screenshot and optional additional desktop/mobile project screenshots. The other three project covers already use supplied screenshots.
 - Verified studio social profile URLs: empty configuration entries stay hidden.
 - An operational studio mailbox and an HTTPS inquiry delivery endpoint: without configuration the form clearly reports that online delivery is unavailable.
 - Business-specific privacy/terms details, actual provider and retention arrangements, and deployment/domain configuration.
