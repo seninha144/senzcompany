@@ -12,7 +12,7 @@ export const navigation = ['work', 'services', 'about', 'contact'];
 export const site = {
   name: 'SENZ',
   url: 'https://senzcompany.com',
-  email: 'hello@senzcompany.com',
+  email: 'senz@senzcompany.com',
   founder: 'Enzo Sena',
   socials: { instagram: '', linkedin: '', github: '' },
 };

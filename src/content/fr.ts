@@ -133,7 +133,7 @@ const fr: Content = {
   terms: 'Conditions',
   legalNote: 'Informations du site',
   privacyText: [
-    'Ce site est géré par SENZ, un studio numérique indépendant fondé par Enzo Sena. Pour toute question sur la confidentialité : hello@senzcompany.com.',
+    'Ce site est géré par SENZ, un studio numérique indépendant fondé par Enzo Sena. Pour toute question sur la confidentialité : senz@senzcompany.com.',
     'Le formulaire demande votre nom, votre email et les détails du projet. L’entreprise, le pays et le site existant sont facultatifs. Lorsque l’envoi est configuré, ces données sont transmises au prestataire de livraison du studio pour répondre à votre demande.',
     'Cette version n’utilise pas de cookies publicitaires ni d’outils de suivi analytique. L’hébergeur peut traiter des journaux techniques pour exploiter et protéger le site.',
     'N’incluez pas de données personnelles sensibles. Contactez le studio pour demander l’accès, la rectification ou la suppression de votre demande.',
@@ -142,7 +142,7 @@ const fr: Content = {
     'Ce site présente SENZ et ses projets. Son contenu est informatif et ne constitue pas une offre contractuelle.',
     'Le périmètre, les honoraires, les livrables, la propriété et le support sont convenus séparément par écrit avant le début du travail.',
     'Les noms de projets et les contenus tiers appartiennent à leurs propriétaires. Les compositions illustratives sont signalées et ne constituent pas des captures vérifiées des produits.',
-    'Pour toute question ou pour discuter d’un projet : hello@senzcompany.com.',
+    'Pour toute question ou pour discuter d’un projet : senz@senzcompany.com.',
   ],
   caseLabels: [
     'Présentation',
@@ -259,7 +259,7 @@ const fr: Content = {
     success: 'Merci. Votre demande a bien été reçue. Nous vous répondrons par email.',
     error: 'L’envoi a échoué. Réessayez ou contactez-nous par email.',
     unavailable:
-      'Le formulaire n’est pas encore connecté. Envoyez votre projet à hello@senzcompany.com.',
+      'Le formulaire n’est pas encore connecté. Envoyez votre projet à senz@senzcompany.com.',
     consent:
       'Vos données servent uniquement à répondre à votre demande. Consultez notre politique de',
     required: 'Veuillez remplir les champs obligatoires.',

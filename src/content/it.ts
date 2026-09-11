@@ -141,7 +141,7 @@ const it: Content = {
   terms: 'Condizioni',
   legalNote: 'Informazioni sul sito',
   privacyText: [
-    'Questo sito è gestito da SENZ, uno studio digitale indipendente fondato da Enzo Sena. Per domande sulla privacy: hello@senzcompany.com.',
+    'Questo sito è gestito da SENZ, uno studio digitale indipendente fondato da Enzo Sena. Per domande sulla privacy: senz@senzcompany.com.',
     'Il modulo richiede nome, email e dettagli del progetto. Azienda, paese e sito esistente sono facoltativi. Quando l’invio è configurato, i dati vengono trasmessi al fornitore di recapito dello studio per rispondere alla richiesta.',
     'Questa versione non utilizza cookie pubblicitari né strumenti di analisi. Il fornitore di hosting può trattare registri tecnici per gestire e proteggere il sito.',
     'Non includere dati personali sensibili. Contatta lo studio per chiedere accesso, rettifica o cancellazione dei dati della richiesta.',
@@ -150,7 +150,7 @@ const it: Content = {
     'Questo sito presenta SENZ e il suo lavoro. I contenuti sono informativi e non costituiscono un’offerta vincolante.',
     'Ambito, compensi, consegne, proprietà e assistenza vengono concordati separatamente per iscritto prima dell’inizio dei lavori.',
     'I nomi dei progetti e i materiali di terzi appartengono ai rispettivi proprietari. Le composizioni illustrative sono identificate e non sono schermate verificate dei prodotti.',
-    'Per domande sul sito o per parlare di un progetto: hello@senzcompany.com.',
+    'Per domande sul sito o per parlare di un progetto: senz@senzcompany.com.',
   ],
   caseLabels: [
     'Panoramica',
@@ -267,7 +267,7 @@ const it: Content = {
     sending: 'Invio in corso…',
     success: 'Grazie. Abbiamo ricevuto la richiesta e risponderemo via email.',
     error: 'Invio non riuscito. Riprova o contattaci via email.',
-    unavailable: 'Il modulo non è ancora collegato. Invia i dettagli a hello@senzcompany.com.',
+    unavailable: 'Il modulo non è ancora collegato. Invia i dettagli a senz@senzcompany.com.',
     consent: 'I tuoi dati serviranno solo a rispondere alla richiesta. Leggi la nostra',
     required: 'Compila i campi obbligatori.',
     invalid: 'Controlla l’email e l’indirizzo del sito.',

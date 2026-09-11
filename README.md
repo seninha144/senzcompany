@@ -58,7 +58,7 @@ J.A.R.V.I.S. is the fourth project at `/{locale}/work/jarvis`, identified as an 
 
 Social URLs are intentionally empty in `site.socials`. Add verified Instagram, LinkedIn and GitHub profile URLs there to show them in the footer. No awards, employees, addresses, testimonials, project years or performance metrics have been invented.
 
-Before public launch, supply the approved project screenshots, verified social URLs, a working destination for `hello@senzcompany.com`, and the inquiry delivery endpoint. Review the informational privacy/terms copy against the actual business identity, hosting provider, delivery provider and retention arrangements. The implementation does not claim these pages are a jurisdiction-specific legal policy.
+Before public launch, supply the approved project screenshots, verified social URLs, a working destination for `senz@senzcompany.com`, and the inquiry delivery endpoint. Review the informational privacy/terms copy against the actual business identity, hosting provider, delivery provider and retention arrangements. The implementation does not claim these pages are a jurisdiction-specific legal policy.
 
 ## Deployment and SEO
 

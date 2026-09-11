@@ -141,7 +141,7 @@ const pt: Content = {
   terms: 'Termos',
   legalNote: 'Informações do website',
   privacyText: [
-    'Este website é gerido pela SENZ, um estúdio digital independente fundado por Enzo Sena. Para questões de privacidade, contacte hello@senzcompany.com.',
+    'Este website é gerido pela SENZ, um estúdio digital independente fundado por Enzo Sena. Para questões de privacidade, contacte senz@senzcompany.com.',
     'O formulário pede o nome, email e detalhes do projeto. Empresa, país e website são opcionais. Quando o envio está configurado, os dados são transmitidos ao prestador de entrega do estúdio para responder ao pedido.',
     'Esta versão não utiliza cookies publicitários nem ferramentas de análise. O alojamento pode tratar registos técnicos de acesso para operar e proteger o website.',
     'Não inclua dados pessoais sensíveis. Contacte o estúdio para solicitar acesso, correção ou eliminação dos dados do seu pedido.',
@@ -150,7 +150,7 @@ const pt: Content = {
     'Este website apresenta a SENZ e o seu trabalho. O conteúdo é informativo e não constitui uma proposta vinculativa.',
     'Âmbito, preços, entregas, propriedade e apoio são acordados separadamente por escrito antes do início dos trabalhos.',
     'Os nomes de projetos e materiais de terceiros pertencem aos respetivos titulares. As composições ilustrativas estão identificadas e não são capturas verificadas dos produtos.',
-    'Para questões sobre o website ou um projeto, contacte hello@senzcompany.com.',
+    'Para questões sobre o website ou um projeto, contacte senz@senzcompany.com.',
   ],
   caseLabels: [
     'Visão geral',
@@ -268,7 +268,7 @@ const pt: Content = {
     success: 'Obrigado. Recebemos o seu pedido e responderemos por email.',
     error: 'Não foi possível enviar. Tente novamente ou contacte-nos por email.',
     unavailable:
-      'O envio de pedidos ainda não está ligado. Envie os detalhes para hello@senzcompany.com.',
+      'O envio de pedidos ainda não está ligado. Envie os detalhes para senz@senzcompany.com.',
     consent: 'Os seus dados serão usados apenas para responder ao pedido. Consulte a nossa',
     required: 'Preencha os campos obrigatórios.',
     invalid: 'Verifique o email e o endereço do website.',

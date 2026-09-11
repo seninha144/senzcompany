@@ -156,7 +156,7 @@ export function ContactForm({
           f.error
         ) : status === 'unavailable' ? (
           <>
-            {f.unavailable} <a href="mailto:hello@senzcompany.com">hello@senzcompany.com ↗</a>
+            {f.unavailable} <a href="mailto:senz@senzcompany.com">senz@senzcompany.com ↗</a>
           </>
         ) : null}
       </div>

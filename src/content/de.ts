@@ -141,7 +141,7 @@ const de: Content = {
   terms: 'Nutzungsbedingungen',
   legalNote: 'Website-Informationen',
   privacyText: [
-    'Diese Website wird von SENZ betrieben, einem unabhängigen Digitalstudio von Enzo Sena. Fragen zum Datenschutz: hello@senzcompany.com.',
+    'Diese Website wird von SENZ betrieben, einem unabhängigen Digitalstudio von Enzo Sena. Fragen zum Datenschutz: senz@senzcompany.com.',
     'Das Anfrageformular erfasst Name, E-Mail-Adresse und Projektdetails. Unternehmen, Land und bestehende Website sind freiwillig. Bei eingerichtetem Versand werden diese Angaben an den Zustelldienst des Studios übermittelt, um Ihre Anfrage zu beantworten.',
     'Diese Version verwendet keine Werbecookies oder Analyse-Tracker. Der Hostinganbieter kann technische Zugriffsprotokolle für Betrieb und Sicherheit verarbeiten.',
     'Bitte übermitteln Sie keine sensiblen personenbezogenen Daten. Für Auskunft, Berichtigung oder Löschung Ihrer Anfrage wenden Sie sich an das Studio.',
@@ -150,7 +150,7 @@ const de: Content = {
     'Diese Website stellt SENZ und seine Arbeit vor. Die Inhalte dienen der Information und sind kein verbindliches Angebot.',
     'Umfang, Vergütung, Leistungen, Eigentumsrechte und Betreuung werden vor Arbeitsbeginn gesondert schriftlich vereinbart.',
     'Projektnamen und Materialien Dritter gehören den jeweiligen Rechteinhabern. Illustrative Ansichten sind gekennzeichnet und keine verifizierten Produktaufnahmen.',
-    'Für Fragen zur Website oder einem Projekt: hello@senzcompany.com.',
+    'Für Fragen zur Website oder einem Projekt: senz@senzcompany.com.',
   ],
   caseLabels: [
     'Überblick',
@@ -274,7 +274,7 @@ const de: Content = {
     error:
       'Die Anfrage konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie uns eine E-Mail.',
     unavailable:
-      'Das Formular ist noch nicht verbunden. Bitte senden Sie Ihre Projektdetails an hello@senzcompany.com.',
+      'Das Formular ist noch nicht verbunden. Bitte senden Sie Ihre Projektdetails an senz@senzcompany.com.',
     consent:
       'Ihre Angaben werden nur zur Beantwortung Ihrer Anfrage verwendet. Lesen Sie unsere Informationen zum',
     required: 'Bitte füllen Sie die Pflichtfelder aus.',

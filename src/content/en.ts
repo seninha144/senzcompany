@@ -127,7 +127,7 @@ const en: Content = {
   terms: 'Terms',
   legalNote: 'Website information',
   privacyText: [
-    'This website is operated by SENZ, an independent digital studio founded by Enzo Sena. Privacy questions can be sent to hello@senzcompany.com.',
+    'This website is operated by SENZ, an independent digital studio founded by Enzo Sena. Privacy questions can be sent to senz@senzcompany.com.',
     'The inquiry form asks for your name, email address and project details. Company, country and existing website are optional. When inquiry delivery is configured, these details are sent to the studio’s delivery provider to respond to your request.',
     'This version does not use advertising cookies or analytics trackers. Hosting providers may process technical access logs to operate and protect the website.',
     'Do not include sensitive personal information in your message. Contact the studio to ask about access to, correction of or deletion of your inquiry.',
@@ -136,7 +136,7 @@ const en: Content = {
     'This website introduces SENZ and its work. Content is provided for general information and does not constitute a binding proposal.',
     'Project scope, fees, deliverables, ownership and support are agreed separately in writing before work begins.',
     'Project names and third-party materials belong to their respective owners. Illustrative compositions are identified and should not be interpreted as verified production screenshots.',
-    'For questions about using this website or discussing a project, contact hello@senzcompany.com.',
+    'For questions about using this website or discussing a project, contact senz@senzcompany.com.',
   ],
   caseLabels: [
     'Overview',
@@ -255,7 +255,7 @@ const en: Content = {
     success: 'Thank you. Your inquiry has been received. We’ll reply by email.',
     error: 'Your inquiry could not be sent. Please try again or contact us by email.',
     unavailable:
-      'Online inquiries are not connected yet. Please email hello@senzcompany.com with your project details.',
+      'Online inquiries are not connected yet. Please email senz@senzcompany.com with your project details.',
     consent: 'Your details will only be used to respond to your inquiry. Read our',
     required: 'Please complete the required fields.',
     invalid: 'Please check your email address and website URL.',
