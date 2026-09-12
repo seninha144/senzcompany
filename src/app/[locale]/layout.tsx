@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getContent, isLocale, locales, site } from '@/content';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/sections';
+import { BrandIntro, BrandIntroScript } from '@/components/brand-intro';
 import '../globals.css';
 import type { Metadata } from 'next';
 
@@ -22,8 +23,12 @@ export default async function LocaleLayout({
   if (!isLocale(locale)) notFound();
   const c = getContent(locale);
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <BrandIntroScript />
+      </head>
       <body id="top">
+        <BrandIntro />
         <Header
           locale={locale}
           c={{

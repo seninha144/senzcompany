@@ -1,4 +1,4 @@
-# Verification — 11 September 2026
+# Verification — 12 September 2026
 
 ## Build and code
 
@@ -8,7 +8,7 @@
 
 ## Browser coverage
 
-The suite now contains 54 Playwright tests using Chromium on Windows. The LUZEN run passed 53 tests; one screenshot write encountered a transient Windows filesystem error and passed on its targeted rerun. A subsequent normal run of all 16 portfolio visual tests passed, with 94 screenshot comparisons.
+All 62 Playwright tests passed in the latest complete Chromium run. The 16 portfolio visual tests passed against the existing references, with 94 screenshot comparisons and no baseline updates for the brand intro.
 
 - All 55 pages return HTTP 200 with one primary heading and the correct document language.
 - All 55 pages provide the expected absolute canonical URL, five language alternatives plus `x-default`, and an absolute social image URL.
@@ -29,6 +29,10 @@ The suite now contains 54 Playwright tests using Chromium on Windows. The LUZEN 
 - Desktop showcase, Portuguese case study and German mobile case study visually reviewed. The new artwork is clearly identified as illustrative.
 
 ## Visual and performance review
+
+The brand intro uses the existing lowercase SENZ wordmark, paper/ink/sage colors and easing. Eight dedicated browser tests cover its first visit, keyboard dismissal, responsive centering at 320/768/1440px, session persistence, client navigation, locale changes, refresh, interrupted entry, reduced motion, denied session storage, disabled JavaScript and failed hydration downloads. The intro initializes before body paint and releases its scroll lock independently of React hydration. Its normal CSS duration is two seconds, with a 2.2-second JavaScript fallback.
+
+Desktop, tablet and mobile intro frames were visually inspected. WebKit 26.6 checks passed on desktop and emulated iPhone 13 / iPad viewports for completion, session persistence, reload, centered composition and restored scrolling. These are emulations on Windows, not tests on physical iOS hardware. No page or project content was redesigned.
 
 LUZEN replaces the former first project in all five languages. Its localized routes, canonical metadata, old-route redirects, sitemap entries and absent-media fallback passed browser checks. Desktop, French tablet and German 320px layouts were visually reviewed. Other project copy was compared against a pre-change copy and remains identical; J.A.R.V.I.S. next-project navigation now references LUZEN. Portfolio snapshots were intentionally updated for the replacement.
 

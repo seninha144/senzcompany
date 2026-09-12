@@ -70,6 +70,10 @@ System fonts avoid render-blocking font requests and font-swap layout shifts. Pr
 
 ## Content and design
 
+The shared locale layout includes a two-second typographic brand intro, built with CSS and a small inline bootstrap in `src/components/brand-intro.tsx`. It reuses the existing lowercase wordmark and palette. `sessionStorage['senz-intro-seen']` suppresses replay across navigation, locale changes and refreshes in the same tab. To preview again, open a fresh browser session or clear that key and reload.
+
+The bootstrap runs before body paint to avoid a flash on returning visits. It does not depend on hydration or block page rendering. Reduced motion, disabled JavaScript or unavailable session storage skip the intro. Keyboard, pointer, focus and page-exit interactions release it immediately; normal completion uses a fade and a 2.2-second fallback. All temporary scroll rules depend on one root attribute, which is removed on completion. No content is made inert or hidden from assistive technology. The `suppressHydrationWarning` on the root element is scoped to this intentional pre-hydration attribute. The intro has no heading or focusable content.
+
 Warm paper, charcoal and a muted sage studio accent; the orange surface belongs to the MARCOS CELL illustration. The identity is typographic and can be replaced by an SVG in the shared header/footer. Services use accessible vertical tabs with arrow-key, Home and End navigation. The header, service explorer, capability disclosures and inquiry form are interactive client boundaries.
 
 Use `npm run format` after editing. Keep locale schemas aligned and add new public paths to both page generation and the sitemap.

@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import './studio.css';
 @import './luzen.css';
+@import './brand-intro.css';
 
 @theme inline {
   --color-paper: #f5f4ef;

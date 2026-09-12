@@ -63,7 +63,7 @@ for (const locale of locales) {
       for (const path of paths) {
         await page.goto(`/${locale}${path}`);
         await page.evaluate(() =>
-          Promise.all(
+          Promise.allSettled(
             document
               .getAnimations()
               .filter((animation) => animation.effect?.getComputedTiming().iterations !== Infinity)
