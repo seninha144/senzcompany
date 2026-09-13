@@ -1,3 +1,4 @@
+import { afterhours } from './afterhours';
 import { vanta } from './vanta';
 import { luzen } from './luzen';
 import type { Content } from './types';
@@ -166,30 +167,7 @@ const de: Content = {
     'Technische Schwerpunkte',
   ],
   nextProject: 'Nächstes Projekt',
-  projects: [
-    vanta.de.project,
-    luzen.de.project,
-    {
-      name: 'Plattform für Restaurantmanagement',
-      category: 'Webanwendung · Produktentwicklung',
-      location: 'Eigenständiges Produkt',
-      description:
-        'Ein eigenständiges Produkt für eine übersichtlichere Verwaltung von Restaurantteams, Dienstplänen und betrieblichen Abläufen.',
-      challenge:
-        'Beschäftigte, Verfügbarkeiten und tägliche Abläufe koordinieren, ohne das Team aus dem Blick zu verlieren.',
-      approach:
-        'Verbundene Arbeitsabläufe für Personalplanung und Betriebsführung erkunden, ausgerichtet an alltäglichen Anforderungen.',
-      solution:
-        'Eine Plattform in Entwicklung für Beschäftigte, Dienstpläne, Verfügbarkeiten und Verwaltungsabläufe. Funktionen und Umfang können sich ändern.',
-      outcome:
-        'In Entwicklung. Ein eigenständiges Produkt, kein Kundenauftrag und noch kein öffentlich verfügbarer Dienst.',
-      highlights: [
-        'Personalverwaltung',
-        'Dienstplanung und Verfügbarkeit',
-        'Betriebliche Arbeitsabläufe',
-      ],
-    },
-  ],
+  projects: [vanta.de.project, luzen.de.project, afterhours],
   form: {
     name: 'Name',
     email: 'E-Mail',

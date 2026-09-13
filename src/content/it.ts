@@ -1,3 +1,4 @@
+import { afterhours } from './afterhours';
 import { vanta } from './vanta';
 import { luzen } from './luzen';
 import type { Content } from './types';
@@ -166,26 +167,7 @@ const it: Content = {
     'Aspetti tecnici',
   ],
   nextProject: 'Prossimo progetto',
-  projects: [
-    vanta.it.project,
-    luzen.it.project,
-    {
-      name: 'Piattaforma di gestione ristoranti',
-      category: 'Applicazione web · Sviluppo di prodotto',
-      location: 'Prodotto indipendente',
-      description:
-        'Un prodotto indipendente che esplora un modo più chiaro di gestire personale, turni e operazioni nella ristorazione.',
-      challenge:
-        'Coordinare dipendenti, disponibilità e operazioni quotidiane senza perdere di vista il gruppo.',
-      approach:
-        'Esplorare flussi collegati per la pianificazione del personale e la gestione operativa, concentrati sulle esigenze quotidiane.',
-      solution:
-        'Una piattaforma in sviluppo per dipendenti, turni, disponibilità e processi gestionali. Funzionalità e ambito potranno evolvere.',
-      outcome:
-        'In sviluppo. È un prodotto indipendente, non un progetto commissionato da un cliente né un servizio già lanciato.',
-      highlights: ['Gestione del personale', 'Turni e disponibilità', 'Flussi operativi'],
-    },
-  ],
+  projects: [vanta.it.project, luzen.it.project, afterhours],
   form: {
     name: 'Nome',
     email: 'Email',

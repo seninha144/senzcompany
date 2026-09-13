@@ -39,7 +39,7 @@ for (const locale of locales) {
     await expect(page).toHaveTitle(/LUZEN.*SENZ/);
     await expect(page.locator('.next-project a')).toHaveAttribute(
       'href',
-      `/${locale}/work/restaurant-platform`,
+      `/${locale}/work/afterhours`,
     );
     const sitemap = await (await request.get('/sitemap.xml')).text();
     expect(sitemap).toContain(`/${locale}/work/luzen`);

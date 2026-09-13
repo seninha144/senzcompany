@@ -1,3 +1,4 @@
+import { afterhours } from './afterhours';
 import { vanta } from './vanta';
 import { luzen } from './luzen';
 import type { Content } from './types';
@@ -152,26 +153,7 @@ const en: Content = {
     'Technical focus',
   ],
   nextProject: 'Next project',
-  projects: [
-    vanta.en.project,
-    luzen.en.project,
-    {
-      name: 'Restaurant management platform',
-      category: 'Web application · Product development',
-      location: 'Independent product',
-      description:
-        'An independent product exploring a clearer way to manage restaurant teams, schedules and everyday operations.',
-      challenge:
-        'Restaurant managers need to coordinate employees, availability and daily operations without losing sight of the team.',
-      approach:
-        'Explore connected workflows for workforce planning and operational management, keeping the product focused on everyday needs.',
-      solution:
-        'A platform in development covering employees, schedules, availability and management workflows. Features and scope may evolve.',
-      outcome:
-        'In development. This is an independent product, not a commissioned client project or a publicly launched service.',
-      highlights: ['Workforce management', 'Scheduling and availability', 'Operational workflows'],
-    },
-  ],
+  projects: [vanta.en.project, luzen.en.project, afterhours],
   form: {
     name: 'Name',
     email: 'Email',

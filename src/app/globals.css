@@ -2076,7 +2076,7 @@ svg {
   transform: none;
 }
 .portfolio-current .project-luzen .project-visual,
-.portfolio-current .project-restaurant-platform .project-visual {
+.portfolio-current .project-afterhours .project-visual {
   aspect-ratio: 1.9;
 }
 .project-meta .project-description {
@@ -2099,5 +2099,31 @@ svg {
     right: 10px;
     bottom: 10px;
     padding: 8px 12px;
+  }
+}
+
+.project-visual.afterhours-loop {
+  background: #080808;
+}
+.afterhours-loop video {
+  object-fit: contain;
+  object-position: center;
+}
+.vanta-preview .afterhours-loop {
+  isolation: auto;
+}
+.afterhours-loop button {
+  z-index: 2;
+}
+@media (max-width: 1023px) {
+  .project-afterhours .project-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .project-visual.afterhours-loop button {
+    right: 6px;
+    bottom: 6px;
+    padding: 8px 10px;
+    font-size: 10px;
   }
 }

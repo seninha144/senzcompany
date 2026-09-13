@@ -1,3 +1,4 @@
+import { afterhoursMedia } from '@/content/afterhours-media';
 import { vanta } from '@/content/vanta';
 import { LuzenCase } from '@/components/luzen-case';
 import { luzenMedia } from '@/content/luzen-media';
@@ -10,7 +11,6 @@ import { About, ContactCTA, Process, Services, Work } from '@/components/section
 import { ActionLink, Eyebrow, PageIntro } from '@/components/ui';
 import { ProjectVisual } from '@/components/project-visual';
 import { ProjectScreens } from '@/components/project-screens';
-import { projectMedia } from '@/content/media';
 import { ContactForm } from '@/components/contact-form';
 import { Capabilities } from '@/components/capabilities';
 import { Founder, Principles } from '@/components/studio-sections';
@@ -77,7 +77,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       ? '/projects/vanta/preview-poster.webp'
       : projectIndex === 1 && luzenMedia.cover
         ? luzenMedia.cover
-        : `/${locale}/opengraph-image`;
+        : projectIndex === 2 && afterhoursMedia.cover
+          ? afterhoursMedia.cover
+          : `/${locale}/opengraph-image`;
   return {
     metadataBase: new URL(site.url),
     title,
@@ -231,15 +233,13 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         <Link className="case-back text-link" href={`/${locale}/work`}>
           ← {c.nav[0]}
         </Link>
-        <Eyebrow>
-          {i === 2 ? `${c.independentProduct} / ${c.inDevelopment}` : p.typeLabel || p.category}
-        </Eyebrow>
+        <Eyebrow>{p.typeLabel || p.category}</Eyebrow>
         <h1>{p.name}</h1>
         {p.subtitle && <p className="case-subtitle">{p.subtitle}</p>}
         <p className="intro-copy">{p.description}</p>
         <dl className="case-metadata">
           {[
-            [c.caseLabels[5], p.typeLabel || (i === 2 ? c.independentProduct : p.category)],
+            [c.caseLabels[5], p.typeLabel || p.category],
             [c.caseLabels[6], p.location],
             [c.caseLabels[7], p.category],
           ]
@@ -254,9 +254,6 @@ export default async function Page({ params }: { params: Promise<Params> }) {
       </section>
       <div className="container">
         <ProjectVisual index={i} c={c} locale={locale} detail />
-        {slugs[i] !== 'vanta' && !projectMedia[slugs[i]].hero && (
-          <p className="visual-note">{c.visualNote}</p>
-        )}
       </div>
       <section className="case-story container">
         {[

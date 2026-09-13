@@ -1,3 +1,4 @@
+import { afterhours } from './afterhours';
 import { vanta } from './vanta';
 import { luzen } from './luzen';
 import type { Content } from './types';
@@ -158,26 +159,7 @@ const fr: Content = {
     'Axes techniques',
   ],
   nextProject: 'Projet suivant',
-  projects: [
-    vanta.fr.project,
-    luzen.fr.project,
-    {
-      name: 'Plateforme de gestion de restaurants',
-      category: 'Application web · Développement de produit',
-      location: 'Produit indépendant',
-      description:
-        'Un produit indépendant qui explore une gestion plus claire des équipes, des plannings et des opérations en restauration.',
-      challenge:
-        'Coordonner les employés, les disponibilités et les opérations quotidiennes sans perdre de vue l’équipe.',
-      approach:
-        'Explorer des parcours cohérents pour la planification des équipes et la gestion opérationnelle, centrés sur les besoins quotidiens.',
-      solution:
-        'Une plateforme en développement couvrant les employés, les plannings, les disponibilités et les processus de gestion. Le périmètre pourra évoluer.',
-      outcome:
-        'En développement. Il s’agit d’un produit indépendant, et non d’un projet client ou d’un service déjà lancé.',
-      highlights: ['Gestion des équipes', 'Plannings et disponibilités', 'Processus opérationnels'],
-    },
-  ],
+  projects: [vanta.fr.project, luzen.fr.project, afterhours],
   form: {
     name: 'Nom',
     email: 'Email',

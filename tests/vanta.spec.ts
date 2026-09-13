@@ -7,7 +7,7 @@ test('VANTA translations, metadata, sequence and removed routes', async ({ page,
   for (const locale of locales) {
     await page.goto(`/${locale}/work`);
     await expect(page.locator('.project-showcase h3')).toHaveText(
-      dictionaries[locale].projects.map((p) => p.name),
+      [1, 2, 0].map((i) => dictionaries[locale].projects[i].name),
     );
     await expect(page.locator('main')).not.toContainText(/Marcos.?Cell|JARVIS|J\.A\.R\.V\.I\.S/i);
     for (const [i, slug] of slugs.entries()) {
@@ -60,7 +60,7 @@ test('VANTA lazy video playback, pause, navigation and reduced motion', async ({
   expect(await video.evaluate((v) => (v as HTMLVideoElement).paused)).toBe(true);
   await page.locator('.vanta-loop button').click();
   await expect.poll(() => video.evaluate((v) => (v as HTMLVideoElement).paused)).toBe(false);
-  await page.locator('.vanta-media-link').click({ position: { x: 20, y: 20 } });
+  await page.locator('.project-vanta .vanta-media-link').click({ position: { x: 20, y: 20 } });
   await expect(page).toHaveURL('/en/work/vanta');
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.reload();

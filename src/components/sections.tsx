@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { projectMedia } from '@/content/media';
 import { ArrowUpRight } from 'lucide-react';
 import { navigation, site, slugs, type Content, type Locale } from '@/content';
 import { ActionLink, Eyebrow } from './ui';
@@ -15,51 +14,51 @@ export function Work({ locale, c, full = false }: { locale: Locale; c: Content; 
         </div>
       )}
       <div className="projects portfolio-current">
-        {c.projects.map((p, i) => (
-          <article className={`project-showcase project-${i} project-${slugs[i]}`} key={slugs[i]}>
-            {slugs[i] === 'vanta' ? (
-              <div className="project-image-link vanta-preview">
-                <ProjectVisual index={i} c={c} locale={locale} />
+        {[1, 2, 0].map((i) => {
+          const p = c.projects[i];
+          return (
+            <article className={`project-showcase project-${i} project-${slugs[i]}`} key={slugs[i]}>
+              {slugs[i] === 'vanta' || slugs[i] === 'afterhours' ? (
+                <div className="project-image-link vanta-preview">
+                  <ProjectVisual index={i} c={c} locale={locale} />
+                  <Link
+                    className="vanta-media-link"
+                    href={`/${locale}/work/${slugs[i]}`}
+                    aria-label={`${c.project}: ${p.name}`}
+                  >
+                    <span className="project-open">
+                      <ArrowUpRight aria-hidden="true" size={24} />
+                    </span>
+                  </Link>
+                </div>
+              ) : (
                 <Link
-                  className="vanta-media-link"
-                  href={`/${locale}/work/vanta`}
-                  aria-label={`${c.project}: VANTA`}
+                  className="project-image-link"
+                  href={`/${locale}/work/${slugs[i]}`}
+                  aria-label={`${c.project}: ${p.name}`}
                 >
+                  <ProjectVisual index={i} c={c} locale={locale} />
                   <span className="project-open">
                     <ArrowUpRight aria-hidden="true" size={24} />
                   </span>
                 </Link>
+              )}
+              <div className="project-meta">
+                <div>
+                  <h3>
+                    <Link href={`/${locale}/work/${slugs[i]}`}>{p.name}</Link>
+                  </h3>
+                  {p.subtitle && <p>{p.subtitle}</p>}
+                  <p>{p.category}</p>
+                  {(slugs[i] === 'vanta' || slugs[i] === 'afterhours') && (
+                    <p className="project-description">{p.description}</p>
+                  )}
+                </div>
+                <span>{p.typeLabel || p.location}</span>
               </div>
-            ) : (
-              <Link
-                className="project-image-link"
-                href={`/${locale}/work/${slugs[i]}`}
-                aria-label={`${c.project}: ${p.name}`}
-              >
-                <ProjectVisual index={i} c={c} locale={locale} />
-                <span className="project-open">
-                  <ArrowUpRight aria-hidden="true" size={24} />
-                </span>
-              </Link>
-            )}
-            <div className="project-meta">
-              <div>
-                <h3>
-                  <Link href={`/${locale}/work/${slugs[i]}`}>{p.name}</Link>
-                </h3>
-                {p.subtitle && <p>{p.subtitle}</p>}
-                <p>{p.category}</p>
-                {slugs[i] === 'vanta' && <p className="project-description">{p.description}</p>}
-              </div>
-              <span className={i === 2 ? 'project-status' : ''}>
-                {i === 2 ? c.inDevelopment : p.typeLabel || p.location}
-              </span>
-            </div>
-            {i === 2 && !projectMedia[slugs[i]].hero && (
-              <p className="visual-note">{c.visualNote}</p>
-            )}
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
     </section>
   );
