@@ -14,19 +14,34 @@ export function Work({ locale, c, full = false }: { locale: Locale; c: Content; 
           <ActionLink href={`/${locale}/work`}>{c.allWork}</ActionLink>
         </div>
       )}
-      <div className="projects">
+      <div className="projects portfolio-current">
         {c.projects.map((p, i) => (
-          <article className={`project-showcase project-${i}`} key={slugs[i]}>
-            <Link
-              className="project-image-link"
-              href={`/${locale}/work/${slugs[i]}`}
-              aria-label={`${c.project}: ${p.name}`}
-            >
-              <ProjectVisual index={i} c={c} locale={locale} />
-              <span className="project-open">
-                <ArrowUpRight aria-hidden="true" size={24} />
-              </span>
-            </Link>
+          <article className={`project-showcase project-${i} project-${slugs[i]}`} key={slugs[i]}>
+            {slugs[i] === 'vanta' ? (
+              <div className="project-image-link vanta-preview">
+                <ProjectVisual index={i} c={c} locale={locale} />
+                <Link
+                  className="vanta-media-link"
+                  href={`/${locale}/work/vanta`}
+                  aria-label={`${c.project}: VANTA`}
+                >
+                  <span className="project-open">
+                    <ArrowUpRight aria-hidden="true" size={24} />
+                  </span>
+                </Link>
+              </div>
+            ) : (
+              <Link
+                className="project-image-link"
+                href={`/${locale}/work/${slugs[i]}`}
+                aria-label={`${c.project}: ${p.name}`}
+              >
+                <ProjectVisual index={i} c={c} locale={locale} />
+                <span className="project-open">
+                  <ArrowUpRight aria-hidden="true" size={24} />
+                </span>
+              </Link>
+            )}
             <div className="project-meta">
               <div>
                 <h3>
@@ -34,12 +49,13 @@ export function Work({ locale, c, full = false }: { locale: Locale; c: Content; 
                 </h3>
                 {p.subtitle && <p>{p.subtitle}</p>}
                 <p>{p.category}</p>
+                {slugs[i] === 'vanta' && <p className="project-description">{p.description}</p>}
               </div>
               <span className={i === 2 ? 'project-status' : ''}>
                 {i === 2 ? c.inDevelopment : p.typeLabel || p.location}
               </span>
             </div>
-            {i !== 0 && !projectMedia[slugs[i]].hero && (
+            {i === 2 && !projectMedia[slugs[i]].hero && (
               <p className="visual-note">{c.visualNote}</p>
             )}
           </article>

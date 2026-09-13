@@ -8,7 +8,7 @@ await mkdir(dir);
 await writeFile(
   `${dir}/page.tsx`,
   `import { ProjectLoop } from '@/components/project-loop';
-export default function Page(){return <main style={{paddingTop:1800}}><ProjectLoop src="/loop-fixture.webm" poster="/images/projects/jarvis_project.png" label="Preview" pauseLabel="Pause preview" playLabel="Play preview" /></main>}`,
+export default function Page(){return <main style={{paddingTop:1800}}><ProjectLoop src="/loop-fixture.webm" poster="/projects/luzen/preview-poster.webp" label="Preview" pauseLabel="Pause preview" playLabel="Play preview" /></main>}`,
 );
 const server = spawn(process.execPath, ['node_modules/next/dist/bin/next', 'dev', '-p', '3001'], {
   windowsHide: true,

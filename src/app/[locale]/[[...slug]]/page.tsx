@@ -1,3 +1,4 @@
+import { vanta } from '@/content/vanta';
 import { LuzenCase } from '@/components/luzen-case';
 import { luzenMedia } from '@/content/luzen-media';
 import type { Metadata } from 'next';
@@ -48,27 +49,35 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
           : c.nav[navigation.indexOf(path)];
   const title =
     projectIndex === 0
-      ? `${label} ? ${c.projects[0].category} | SENZ`
-      : label
-        ? `${label} — SENZ`
-        : `SENZ — ${c.services
-            .slice(0, 3)
-            .map((s) => s.name)
-            .join(', ')}`;
+      ? vanta[locale].title
+      : projectIndex === 1
+        ? `${label} — ${c.projects[1].category} | SENZ`
+        : label
+          ? `${label} — SENZ`
+          : `SENZ — ${c.services
+              .slice(0, 3)
+              .map((s) => s.name)
+              .join(', ')}`;
   const description =
-    projectIndex >= 0
-      ? c.projects[projectIndex].description
-      : path === 'services'
-        ? c.servicesIntro
-        : path === 'about'
-          ? c.aboutText
-          : path === 'contact'
-            ? c.contactIntro
-            : c.seo;
+    projectIndex === 0
+      ? vanta[locale].seo
+      : projectIndex >= 0
+        ? c.projects[projectIndex].description
+        : path === 'services'
+          ? c.servicesIntro
+          : path === 'about'
+            ? c.aboutText
+            : path === 'contact'
+              ? c.contactIntro
+              : c.seo;
   const suffix = path ? `/${path}` : '';
   const url = `${site.url}/${locale}${suffix}`;
   const socialImage =
-    projectIndex === 0 && luzenMedia.cover ? luzenMedia.cover : `/${locale}/opengraph-image`;
+    projectIndex === 0
+      ? '/projects/vanta/preview-poster.webp'
+      : projectIndex === 1 && luzenMedia.cover
+        ? luzenMedia.cover
+        : `/${locale}/opengraph-image`;
   return {
     metadataBase: new URL(site.url),
     title,
@@ -213,7 +222,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
     );
   const i = slugs.indexOf(slug[1] as (typeof slugs)[number]);
   if (i < 0) notFound();
-  if (i === 0) return <LuzenCase locale={locale} c={c} />;
+  if (slugs[i] === 'luzen') return <LuzenCase locale={locale} c={c} />;
   const p = c.projects[i];
   const next = (i + 1) % slugs.length;
   return (
@@ -245,7 +254,9 @@ export default async function Page({ params }: { params: Promise<Params> }) {
       </section>
       <div className="container">
         <ProjectVisual index={i} c={c} locale={locale} detail />
-        {!projectMedia[slugs[i]].hero && <p className="visual-note">{c.visualNote}</p>}
+        {slugs[i] !== 'vanta' && !projectMedia[slugs[i]].hero && (
+          <p className="visual-note">{c.visualNote}</p>
+        )}
       </div>
       <section className="case-story container">
         {[

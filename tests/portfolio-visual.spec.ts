@@ -14,6 +14,7 @@ for (const locale of locales) {
   for (const width of [320, 768, 1440]) {
     test(`${locale} ${width}: preserve portfolio and every case study`, async ({ page }) => {
       await page.setViewportSize({ width, height: 1000 });
+      await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto(`/${locale}`);
       await loadImages(page);
       await expect(page.locator('#selected-work')).toHaveScreenshot(
@@ -24,7 +25,7 @@ for (const locale of locales) {
         },
       );
       for (const path of ['', ...slugs.map((slug) => `/${slug}`)]) {
-        await page.emulateMedia({ reducedMotion: path === '/luzen' ? 'reduce' : 'no-preference' });
+        await page.emulateMedia({ reducedMotion: 'reduce' });
         await page.goto(`/${locale}/work${path}`);
         await loadImages(page);
         await expect(page).toHaveScreenshot(
@@ -41,10 +42,11 @@ for (const locale of locales) {
 }
 test('preserve all project hover states', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/en/work');
   await loadImages(page);
   for (const slug of slugs) {
-    const link = page.locator(`.project-image-link[href="/en/work/${slug}"]`);
+    const link = page.locator(`.project-${slug} .project-image-link`);
     await link.hover();
     await page.waitForTimeout(1100);
     await expect(link).toHaveScreenshot(`${slug}-hover.png`, {

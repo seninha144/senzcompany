@@ -7,12 +7,14 @@ export function ProjectLoop({
   label,
   pauseLabel,
   playLabel,
+  className = '',
 }: {
   src: string;
   poster: string;
   label: string;
   pauseLabel: string;
   playLabel: string;
+  className?: string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -52,10 +54,11 @@ export function ProjectLoop({
     };
   }, [src]);
   return (
-    <div className="luzen-loop">
+    <div className={`luzen-loop ${className}`}>
       <video
         ref={ref}
         poster={poster}
+        autoPlay
         muted
         loop
         playsInline

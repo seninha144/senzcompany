@@ -82,8 +82,8 @@ export function LuzenCase({ locale, c }: { locale: Locale; c: Content }) {
       </section>
       <section className="next-project container">
         <Eyebrow>{c.nextProject}</Eyebrow>
-        <Link href={`/${locale}/work/marcos-cell`}>
-          <h2>{c.projects[1].name}</h2>
+        <Link href={`/${locale}/work/restaurant-platform`}>
+          <h2>{c.projects[2].name}</h2>
           <ArrowUpRight aria-hidden="true" />
         </Link>
       </section>

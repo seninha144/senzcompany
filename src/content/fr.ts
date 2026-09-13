@@ -1,3 +1,4 @@
+import { vanta } from './vanta';
 import { luzen } from './luzen';
 import type { Content } from './types';
 const fr: Content = {
@@ -158,25 +159,8 @@ const fr: Content = {
   ],
   nextProject: 'Projet suivant',
   projects: [
+    vanta.fr.project,
     luzen.fr.project,
-    {
-      name: 'MARCOS CELL',
-      category: 'Site commercial',
-      location: 'Brésil',
-      description:
-        'Un site direct et accessible pour la réparation de téléphones et les accessoires. Conçu pour rapprocher un commerce local de ses prochains clients.',
-      challenge: 'Réunir réparations, produits, avis et moyens de contact dans un parcours simple.',
-      approach: 'Prioriser les services disponibles, l’offre du commerce et la prise de contact.',
-      solution:
-        'Un site commercial regroupant réparations et accessoires dans une expérience orientée vers le contact.',
-      outcome:
-        'Un point d’entrée clair pour découvrir le commerce et le contacter. Les conversions n’ont pas fait l’objet de mesures indépendantes.',
-      highlights: [
-        'Expérience pensée pour le mobile',
-        'Présentation des services et produits',
-        'Moyens de contact accessibles',
-      ],
-    },
     {
       name: 'Plateforme de gestion de restaurants',
       category: 'Application web · Développement de produit',
@@ -192,52 +176,6 @@ const fr: Content = {
       outcome:
         'En développement. Il s’agit d’un produit indépendant, et non d’un projet client ou d’un service déjà lancé.',
       highlights: ['Gestion des équipes', 'Plannings et disponibilités', 'Processus opérationnels'],
-    },
-    {
-      name: 'J.A.R.V.I.S.',
-      subtitle: 'Assistant vocal avec IA',
-      typeLabel: 'Projet indépendant',
-      category: 'IA · Application de bureau · Application web',
-      description:
-        'Un assistant vocal multiplateforme associant reconnaissance vocale, IA conversationnelle et interaction en temps réel sur ordinateur et sur le web.',
-      challenge:
-        'Explorer une interaction plus naturelle avec le logiciel grâce à la voix. Le défi technique consiste à coordonner reconnaissance vocale, réponses de l’IA et synthèse vocale, tout en rendant chaque étape compréhensible.',
-      approach:
-        'Concevoir la voix et le retour visuel comme une seule expérience. Une interface futuriste et interactive indique si l’assistant est prêt, à l’écoute, en cours de traitement ou en train de répondre.',
-      solution:
-        'Un assistant personnel indépendant développé par Enzo Sena sous deux formes complémentaires : une application de bureau avec traitement local de la voix, et une expérience web/PWA intégrant l’IA via une API.',
-      outcome:
-        'Une exploration indépendante de la voix, de l’IA conversationnelle et du retour visuel en temps réel sur ordinateur et sur le web. Le projet réunit développement d’applications de bureau, interfaces mobiles, intégration d’API et logiciel sur mesure.',
-      highlights: [
-        'Reconnaissance et synthèse vocales',
-        'IA conversationnelle via une API dans la version web',
-        'États visuels d’interaction en temps réel',
-        'Traitement local de la voix sur ordinateur',
-        'Accès par navigateur et prise en charge du mobile',
-        'Expériences de bureau et web/PWA',
-      ],
-      sections: [
-        {
-          title: 'Application de bureau',
-          text: 'Développée avec Tauri et React / Vite. Le traitement vocal sur ordinateur utilise whisper.cpp pour transcrire la parole et Piper pour la synthèse vocale, dans une interface interactive qui rend visible l’état de l’assistant.',
-        },
-        {
-          title: 'Expérience web / PWA',
-          text: 'Accessible depuis le navigateur et adaptée aux appareils mobiles. La version web associe reconnaissance et synthèse vocales du navigateur, architecture serverless et intégration de l’IA via une API.',
-        },
-        {
-          title: 'Interaction vocale',
-          text: 'La saisie vocale, le traitement et la réponse parlée constituent le cycle d’interaction. Les états visuels — prêt, à l’écoute, traitement et réponse — permettent de suivre chaque étape en temps réel.',
-        },
-        {
-          title: 'Intégration de l’IA',
-          text: 'Dans la version web, l’IA conversationnelle est intégrée via une API. Cette connexion associe interaction vocale et réponses de l’IA au sein de l’expérience accessible par navigateur.',
-        },
-        {
-          title: 'Technologies utilisées',
-          text: 'Application de bureau : Tauri, React, Vite, whisper.cpp et Piper. Web / PWA : reconnaissance vocale du navigateur, synthèse vocale, API d’IA et architecture serverless.',
-        },
-      ],
     },
   ],
   form: {

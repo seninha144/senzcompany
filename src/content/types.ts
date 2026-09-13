@@ -1,7 +1,7 @@
 export const locales = ['en', 'pt', 'fr', 'it', 'de'] as const;
 export type Locale = (typeof locales)[number];
 export const isLocale = (value: string): value is Locale => locales.includes(value as Locale);
-export const slugs = ['luzen', 'marcos-cell', 'restaurant-platform', 'jarvis'] as const;
+export const slugs = ['vanta', 'luzen', 'restaurant-platform'] as const;
 export type Project = {
   name: string;
   subtitle?: string;

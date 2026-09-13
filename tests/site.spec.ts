@@ -45,7 +45,7 @@ for (const locale of locales) {
     page.on('console', (message) => {
       if (message.type() === 'error') errors.push(message.text());
     });
-    for (const width of [320, 375, 390, 430, 768, 1024, 1280, 1440, 1920]) {
+    for (const width of [320, 360, 375, 390, 430, 768, 1024, 1280, 1366, 1440, 1920]) {
       await page.setViewportSize({ width, height: 1000 });
       for (const path of paths) {
         await page.goto(`/${locale}${path}`);
@@ -81,52 +81,6 @@ for (const locale of locales) {
     }
   });
 }
-test('J.A.R.V.I.S. has localized independent-project content and both application variants', async ({
-  page,
-}) => {
-  for (const locale of locales) {
-    const c = dictionaries[locale];
-    const project = c.projects[slugs.indexOf('jarvis')];
-    await page.goto(`/${locale}/work/jarvis`);
-    await expect(page.locator('h1')).toHaveText('J.A.R.V.I.S.');
-    await expect(page.locator('.case-subtitle')).toHaveText(project.subtitle!);
-    await expect(page.locator('.case-intro > .eyebrow')).toHaveText(project.typeLabel!);
-    await expect(page.locator('.case-intro .intro-copy')).toHaveText(project.description);
-    await expect(page.locator('main').getByText(c.inDevelopment, { exact: true })).toHaveCount(0);
-    await expect(
-      page.locator('.case-metadata dt').getByText(c.caseLabels[6], { exact: true }),
-    ).toHaveCount(0);
-    for (const section of project.sections!) {
-      await expect(
-        page.locator('.case-story .eyebrow').filter({ hasText: section.title }),
-      ).toBeVisible();
-    }
-    for (const technology of ['Tauri', 'React', 'Vite', 'whisper.cpp', 'Piper', 'API']) {
-      await expect(page.locator('.case-story')).toContainText(technology);
-    }
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
-      'content',
-      project.description,
-    );
-  }
-});
-
-test('fourth project appears in work lists and connects the case-study sequence', async ({
-  page,
-}) => {
-  for (const path of ['/en', '/en/work']) {
-    await page.goto(path);
-    await expect(page.locator('.project-showcase')).toHaveCount(slugs.length);
-    await expect(page.locator('.project-3 h3 a')).toHaveAttribute('href', '/en/work/jarvis');
-  }
-  await page.goto('/en/work/restaurant-platform');
-  await page.locator('.next-project > a').click();
-  await expect(page).toHaveURL('/en/work/jarvis');
-  await expect(page.locator('.next-project > a')).toHaveAttribute('href', '/en/work/luzen');
-  await page.selectOption('#desktop-language', 'pt');
-  await expect(page).toHaveURL('/pt/work/jarvis');
-});
-
 test('language selector preserves case study and mobile menu manages focus', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto('/en/work/luzen');

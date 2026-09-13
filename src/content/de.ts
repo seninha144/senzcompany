@@ -1,3 +1,4 @@
+import { vanta } from './vanta';
 import { luzen } from './luzen';
 import type { Content } from './types';
 const de: Content = {
@@ -166,27 +167,8 @@ const de: Content = {
   ],
   nextProject: 'Nächstes Projekt',
   projects: [
+    vanta.de.project,
     luzen.de.project,
-    {
-      name: 'MARCOS CELL',
-      category: 'Geschäftswebsite',
-      location: 'Brasilien',
-      description:
-        'Eine direkte, zugängliche Website für Handyreparaturen und Zubehör. Sie verbindet ein lokales Geschäft mit seinen nächsten Kunden.',
-      challenge:
-        'Reparaturen, Produkte, Bewertungen und Kontaktwege in einer einfachen Nutzerführung zusammenbringen.',
-      approach:
-        'Verfügbare Leistungen, das Angebot des Geschäfts und Kontaktmöglichkeiten in den Mittelpunkt stellen.',
-      solution:
-        'Eine Geschäftswebsite, die Reparaturleistungen und Zubehör in einer kontaktorientierten Nutzererfahrung vereint.',
-      outcome:
-        'Eine fokussierte Anlaufstelle, um das Geschäft kennenzulernen und Kontakt aufzunehmen. Anfrageraten wurden nicht unabhängig gemessen.',
-      highlights: [
-        'Für Mobilgeräte konzipiert',
-        'Leistungs- und Produktdarstellung',
-        'Zugängliche Kontaktwege',
-      ],
-    },
     {
       name: 'Plattform für Restaurantmanagement',
       category: 'Webanwendung · Produktentwicklung',
@@ -205,52 +187,6 @@ const de: Content = {
         'Personalverwaltung',
         'Dienstplanung und Verfügbarkeit',
         'Betriebliche Arbeitsabläufe',
-      ],
-    },
-    {
-      name: 'J.A.R.V.I.S.',
-      subtitle: 'KI-Sprachassistent',
-      typeLabel: 'Eigenständiges Projekt',
-      category: 'KI · Desktop-Anwendung · Webanwendung',
-      description:
-        'Ein plattformübergreifender KI-Sprachassistent, der Spracherkennung, dialogbasierte KI und Echtzeitinteraktion auf dem Desktop und im Web verbindet.',
-      challenge:
-        'Eine natürlichere Interaktion mit Software durch Sprache erkunden. Die technische Herausforderung besteht darin, Spracherkennung, KI-Antworten und Sprachausgabe zu koordinieren und dabei jeden Schritt verständlich darzustellen.',
-      approach:
-        'Sprache und visuelle Rückmeldung als eine gemeinsame Erfahrung gestalten. Eine futuristische, interaktive Oberfläche zeigt, ob der Assistent bereit ist, zuhört, verarbeitet oder antwortet.',
-      solution:
-        'Ein von Enzo Sena entwickelter, eigenständiger persönlicher Assistent mit zwei ergänzenden Varianten: eine Desktop-Anwendung mit lokaler Sprachverarbeitung und eine Web-/PWA-Erfahrung mit KI-Anbindung über eine API.',
-      outcome:
-        'Eine eigenständige Erkundung von Sprache, dialogbasierter KI und visueller Rückmeldung in Echtzeit auf dem Desktop und im Web. Das Projekt verbindet Desktop-Entwicklung, mobile Oberflächen, API-Anbindung und individuelle Software.',
-      highlights: [
-        'Spracherkennung und Sprachausgabe',
-        'Dialogbasierte KI über eine API in der Webversion',
-        'Visuelle Interaktionszustände in Echtzeit',
-        'Lokale Sprachverarbeitung auf dem Desktop',
-        'Browserzugang und Unterstützung für Mobilgeräte',
-        'Desktop- und Web-/PWA-Erfahrungen',
-      ],
-      sections: [
-        {
-          title: 'Desktop-Anwendung',
-          text: 'Entwickelt mit Tauri und React / Vite. Die Sprachverarbeitung auf dem Desktop nutzt whisper.cpp zur Umwandlung von Sprache in Text und Piper zur Sprachausgabe. Die interaktive Oberfläche macht den Zustand des Assistenten sichtbar.',
-        },
-        {
-          title: 'Web- / PWA-Erfahrung',
-          text: 'Im Browser zugänglich und für Mobilgeräte angepasst. Die Webversion verbindet browserbasierte Spracherkennung und Sprachausgabe mit einer serverlosen Architektur und KI-Anbindung über eine API.',
-        },
-        {
-          title: 'Sprachinteraktion',
-          text: 'Spracheingabe, Verarbeitung und gesprochene Antwort bilden den Interaktionsablauf. Die visuellen Zustände — bereit, zuhören, verarbeiten und antworten — machen jeden Schritt in Echtzeit nachvollziehbar.',
-        },
-        {
-          title: 'KI-Anbindung',
-          text: 'In der Webversion wird die dialogbasierte KI über eine API angebunden. Dadurch werden Sprachinteraktion und KI-Antworten innerhalb der browserbasierten Erfahrung miteinander verbunden.',
-        },
-        {
-          title: 'Verwendete Technologien',
-          text: 'Desktop: Tauri, React, Vite, whisper.cpp und Piper. Web / PWA: browserbasierte Spracherkennung, Sprachausgabe, KI-API und serverlose Architektur.',
-        },
       ],
     },
   ],

@@ -412,8 +412,7 @@ svg {
   grid-template-columns: 1fr 1fr;
   gap: 50px 28px;
 }
-.project-0,
-.project-3 {
+.project-0 {
   grid-column: 1/-1;
 }
 .project-image-link {
@@ -428,8 +427,7 @@ svg {
   transition: filter 0.5s var(--ease);
   isolation: isolate;
 }
-.project-0 .project-visual,
-.project-3 .project-visual {
+.project-0 .project-visual {
   aspect-ratio: 2.15;
 }
 .project-open {
@@ -603,164 +601,9 @@ svg {
   letter-spacing: 0.025em;
   z-index: 4;
 }
-.visual-1 {
-  background: #df5a2d;
-  color: #21170e;
-}
-.visual-1 .visual-bottom {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 3% 4.5%;
-  background: #df5a2d;
-}
-.cell-brand {
-  position: absolute;
-  left: 7%;
-  top: 10%;
-  font-weight: 800;
-  font-size: clamp(24px, 4.25vw, 65px);
-  line-height: 0.9;
-  letter-spacing: -0.055em;
-  z-index: 3;
-}
-.cell-brand > span {
-  display: block;
-  font-size: 0.85em;
-  margin-top: 0.2em;
-}
-.phone {
-  position: absolute;
-  border-radius: 11%;
-  width: 29%;
-  height: 76%;
-  top: 12%;
-  box-shadow: 10px 18px 24px #4d240e45;
-  transition: transform 0.8s var(--ease);
-}
-.phone-back {
-  left: 38%;
-  transform: rotate(-17deg);
-  background: linear-gradient(125deg, #b8b6aa, #eee9df 50%, #aaa99e);
-  border: 3px solid #d4d0c5;
-}
-.camera-cluster {
-  background: #c4c4b9;
-  box-shadow: 2px 2px 4px #0003;
-  position: absolute;
-  left: 8%;
-  top: 4%;
-  width: 54%;
-  height: 27%;
-  border-radius: 22%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8%;
-  padding: 7%;
-}
-.camera-cluster i {
-  width: 44%;
-  height: 44%;
-  border-radius: 50%;
-  background: radial-gradient(circle, #607070 0 16%, #10171a 18% 60%, #626860 62% 72%, #a5a89e 74%);
-  box-shadow: 1px 1px 2px #0005;
-}
-.phone-front {
-  left: 60%;
-  top: 19%;
-  transform: rotate(12deg);
-  background: #232621;
-  border: 4px solid #aaa99f;
-  box-shadow:
-    inset 0 0 0 3px #171c16,
-    10px 18px 24px #4d240e45;
-  color: #e8ece0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.phone-notch {
-  position: absolute;
-  top: 3%;
-  width: 33%;
-  height: 4%;
-  border-radius: 15px;
-  background: #0c100b;
-}
-.phone-screen-mark {
-  font-size: clamp(25px, 4.5vw, 70px);
-  letter-spacing: -0.13em;
-  line-height: 0.8;
-  font-weight: 700;
-  transform: rotate(-12deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.phone-screen-mark span {
-  color: #b9c49f;
-}
-.phone-screen-line {
-  height: 3px;
-  width: 55%;
-  background: #78816d;
-  margin-top: 25%;
-  border-radius: 1px;
-}
-.phone-screen-line.short {
-  width: 35%;
-  margin-top: 5%;
-  height: 2px;
-}
-.project-image-link:hover .phone-front {
-  transform: rotate(9deg) translateY(-5px);
-}
-.project-image-link:hover .phone-back {
-  transform: rotate(-19deg) translateY(-3px);
-}
 .visual-2 {
   background: #d8ddca;
   color: #35402d;
-}
-.visual-3 {
-  background: var(--ink);
-  color: var(--paper);
-}
-.jarvis-signal {
-  position: absolute;
-  top: 12%;
-  right: 7%;
-  width: 44%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3%;
-  transition: transform 0.8s var(--ease);
-}
-.jarvis-signal span {
-  flex: 1;
-  background: var(--sage);
-}
-.project-image-link:hover .jarvis-signal {
-  transform: translateY(-4px);
-}
-.jarvis-title {
-  position: absolute;
-  left: 4.5%;
-  bottom: 17%;
-  right: 4.5%;
-}
-.jarvis-title > span {
-  font-size: clamp(38px, 9vw, 140px);
-  line-height: 1;
-  letter-spacing: -0.055em;
-}
-.jarvis-title p {
-  margin-top: 12px;
-  font-size: clamp(12px, 1.5vw, 23px);
-  color: var(--sage);
 }
 .case-subtitle {
   margin-top: 24px;
@@ -1456,21 +1299,6 @@ svg {
 .detail-visual {
   aspect-ratio: 2/1;
 }
-.detail-visual .cell-brand {
-  font-size: clamp(35px, 8vw, 120px);
-}
-.detail-visual .phone {
-  width: 20%;
-  height: 90%;
-  top: 15%;
-}
-.detail-visual .phone-back {
-  left: 47%;
-}
-.detail-visual .phone-front {
-  left: 65%;
-  top: 20%;
-}
 .detail-visual .schedule-art {
   left: 30%;
   width: 65%;
@@ -1800,12 +1628,10 @@ svg {
     grid-template-columns: 1fr;
     gap: 35px;
   }
-  .project-0,
-  .project-3 {
+  .project-0 {
     grid-column: auto;
   }
-  .project-0 .project-visual,
-  .project-3 .project-visual {
+  .project-0 .project-visual {
     aspect-ratio: 1.4;
   }
   .project-visual {
@@ -1862,12 +1688,6 @@ svg {
   }
   .project-open svg {
     width: 18px;
-  }
-  .cell-brand {
-    font-size: 8vw;
-  }
-  .phone-screen-mark {
-    font-size: 9vw;
   }
   .platform-caption {
     font-size: 8px;
@@ -2068,21 +1888,6 @@ svg {
   .detail-visual {
     aspect-ratio: 1.3;
   }
-  .detail-visual .cell-brand {
-    font-size: 9vw;
-  }
-  .detail-visual .phone {
-    width: 30%;
-    height: 77%;
-  }
-  .detail-visual .phone-back {
-    left: 37%;
-    top: 15%;
-  }
-  .detail-visual .phone-front {
-    left: 61%;
-    top: 20%;
-  }
   .detail-visual .schedule-art {
     width: 86%;
     height: 60%;
@@ -2231,5 +2036,68 @@ svg {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* Portfolio hierarchy: a lead film, followed by two quieter project previews. */
+.projects.portfolio-current {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+}
+.portfolio-current .project-showcase {
+  min-width: 0;
+}
+.portfolio-current .project-vanta {
+  grid-column: 1 / -1;
+}
+.project-visual.vanta-loop {
+  aspect-ratio: 16 / 9;
+  background: #050505;
+}
+.vanta-loop video {
+  display: block;
+  object-fit: contain;
+}
+.vanta-preview {
+  isolation: isolate;
+}
+.vanta-preview .vanta-loop {
+  isolation: auto;
+}
+.vanta-media-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.vanta-loop button {
+  z-index: 2;
+}
+.vanta-media-link:focus-visible .project-open {
+  opacity: 1;
+  transform: none;
+}
+.portfolio-current .project-luzen .project-visual,
+.portfolio-current .project-restaurant-platform .project-visual {
+  aspect-ratio: 1.9;
+}
+.project-meta .project-description {
+  max-width: 62ch;
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+  text-transform: none;
+  letter-spacing: 0;
+}
+@media (max-width: 767px) {
+  .projects.portfolio-current {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+  .project-visual.vanta-loop {
+    aspect-ratio: 16 / 9;
+  }
+  .project-visual.vanta-loop button {
+    right: 10px;
+    bottom: 10px;
+    padding: 8px 12px;
   }
 }

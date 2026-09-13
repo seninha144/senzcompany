@@ -1,4 +1,16 @@
-# Verification — 12 September 2026
+# Verification — 13 September 2026
+
+## Current portfolio update
+
+- Build, TypeScript, ESLint and repository formatting checks pass.
+- 63 Playwright tests pass in the final run, with the server started separately. The earlier run completed all assertions but stalled during automatic server shutdown on Windows.
+- 50 localized content pages return the correct routes, titles, canonical URLs and language alternatives. The ten page types across five languages were checked at 320, 360, 375, 390, 430, 768, 1024, 1280, 1366, 1440 and 1920px without horizontal overflow or browser console/runtime errors. Accessibility scans pass at 390 and 1440px.
+- VANTA leads the portfolio as a fictional concept, followed by LUZEN and Restaurant Management Platform. The removed case routes return 404 in every language and have no sitemap entries. No obsolete project references remain in source, public assets or current documentation; negative route tests intentionally retain the old identifiers.
+- The 78 current portfolio screenshot references were updated for the requested changes and passed again without updates. Desktop, tablet and mobile compositions were visually inspected.
+- The actual VANTA MP4 plays muted, looping and inline in Chromium. Deferred loading, pause/resume, card navigation and reduced-motion behavior pass. Its 16:9 dimensions are reserved before loading. The published MP4 has progressive-loading metadata; its media payload SHA-256 matches the supplied original exactly.
+- Windows WebKit reports unsupported media for both VANTA and the existing LUZEN MP4. iPhone/iPad emulation validates inline attributes, poster fallback and layout; physical Safari/iPhone playback remains unverified.
+
+## Previous verification — 12 September 2026
 
 ## Build and code
 
@@ -21,28 +33,17 @@ All 62 Playwright tests passed in the latest complete Chromium run. The 16 portf
 - API origin checks, malformed data, excessive payload size, honeypot rejection, invalid URL rejection and attempt limiting pass.
 - Root redirect, missing-route responses, sitemap URL count, robots configuration and reduced-motion behavior pass.
 
-## J.A.R.V.I.S. addition
-
-- Independent project identification, localized subtitle and all additional case-study sections checked in five languages.
-- Desktop technologies and web/PWA AI API integration verified against the supplied project brief. No location, provider, release status, clients or metrics invented.
-- Homepage and work listing contain four projects. Case navigation links Restaurant Management Platform to J.A.R.V.I.S., then to LUZEN. Language switching preserves the route.
-- Desktop showcase, Portuguese case study and German mobile case study visually reviewed. The new artwork is clearly identified as illustrative.
-
 ## Visual and performance review
 
 The brand intro uses the existing lowercase SENZ wordmark, paper/ink/sage colors and easing. Eight dedicated browser tests cover its first visit, keyboard dismissal, responsive centering at 320/768/1440px, session persistence, client navigation, locale changes, refresh, interrupted entry, reduced motion, denied session storage, disabled JavaScript and failed hydration downloads. The intro initializes before body paint and releases its scroll lock independently of React hydration. Its normal CSS duration is two seconds, with a 2.2-second JavaScript fallback.
 
 Desktop, tablet and mobile intro frames were visually inspected. WebKit 26.6 checks passed on desktop and emulated iPhone 13 / iPad viewports for completion, session persistence, reload, centered composition and restored scrolling. These are emulations on Windows, not tests on physical iOS hardware. No page or project content was redesigned.
 
-LUZEN replaces the former first project in all five languages. Its localized routes, canonical metadata, old-route redirects, sitemap entries and absent-media fallback passed browser checks. Desktop, French tablet and German 320px layouts were visually reviewed. Other project copy was compared against a pre-change copy and remains identical; J.A.R.V.I.S. next-project navigation now references LUZEN. Portfolio snapshots were intentionally updated for the replacement.
-
 The isolated `scripts/test-project-loop.mjs` check used a temporary generated WebM fixture, then removed its test route. It verified deferred media requests, actual muted looping playback, inline playback without native controls, manual pause/resume, offscreen pause and reduced-motion poster behavior. No test media is published. The final production build succeeds without any LUZEN media files. Build, typecheck, lint and formatting passed.
 
 The institutional visual revision introduces an asymmetrical founder composition, interactive service tabs, an alternating process timeline and editorial principles. The capabilities accordion retains its accessible interaction. Homepage, About and Services were visually reviewed across desktop, tablet and 320px mobile, including long French and German copy. Six new studio tests cover all five languages, service selection, 15 scoped accessibility scans, keyboard navigation and reduced motion.
 
 At completion of the institutional revision, 16 visual regression tests with 94 screenshot comparisons passed with zero differing pixels against the pre-revision references, including selected work, work listings, all four case studies and project hover states. Source comparisons also confirmed unchanged project content, Work component, case-study rendering and original global styles; new institutional styles are scoped in `studio.css`.
-
-The subsequent, explicitly requested image integration connects the supplied founder portrait and Marcos Cell, Restaurant Management Platform and J.A.R.V.I.S. screenshots. Originals remain in `images/`; public copies use the existing media slots with five-language alternative text. Project screenshots use contain sizing to preserve the entire interface. About and Work were checked at 320, 768 and 1440 pixels: all images decoded successfully with no horizontal overflow. Portfolio references were deliberately refreshed for these approved image changes and now wait for image decoding before capture. These references use Chromium on Windows.
 
 The About technical-capabilities addition passed six new tests: five localized content/responsive/accessibility checks and one keyboard/reduced-motion interaction check. All six disclosures were opened at every requested width in all five languages, with 45 scoped axe scans returning no violations. Verified initial collapsed state, independent expansion, linked ARIA IDs, hidden/inert closed content, arrow rotation, Enter/Space activation, focus preservation and rapid toggling. Desktop, French tablet and German 320px mobile layouts were reviewed visually. Production build, typecheck and lint passed after the addition.
 

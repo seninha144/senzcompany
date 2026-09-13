@@ -1,3 +1,4 @@
+import { vanta } from './vanta';
 import { luzen } from './luzen';
 import type { Content } from './types';
 const en: Content = {
@@ -152,27 +153,8 @@ const en: Content = {
   ],
   nextProject: 'Next project',
   projects: [
+    vanta.en.project,
     luzen.en.project,
-    {
-      name: 'MARCOS CELL',
-      category: 'Commercial website',
-      location: 'Brazil',
-      description:
-        'A direct, approachable website for mobile phone repairs and accessories. Built to connect a local business with its next customer.',
-      challenge:
-        'Bring repair services, products, reviews and contact channels together in a simple customer journey.',
-      approach:
-        'Prioritize what visitors need to know: available services, the business offering and how to get in touch.',
-      solution:
-        'A commercial website that brings repair services and accessories into one conversion-oriented experience.',
-      outcome:
-        'A focused place to discover the business and reach its contact channels. Conversion results have not been independently measured.',
-      highlights: [
-        'Mobile-first experience',
-        'Service and product presentation',
-        'Accessible contact channels',
-      ],
-    },
     {
       name: 'Restaurant management platform',
       category: 'Web application · Product development',
@@ -188,52 +170,6 @@ const en: Content = {
       outcome:
         'In development. This is an independent product, not a commissioned client project or a publicly launched service.',
       highlights: ['Workforce management', 'Scheduling and availability', 'Operational workflows'],
-    },
-    {
-      name: 'J.A.R.V.I.S.',
-      subtitle: 'AI Voice Assistant',
-      typeLabel: 'Independent Project',
-      category: 'AI · Desktop · Web Application',
-      description:
-        'A cross-platform AI voice assistant combining speech recognition, conversational AI and real-time interaction across desktop and web.',
-      challenge:
-        'Explore a more natural way to interact with software through voice. The technical challenge is to coordinate speech recognition, AI responses and speech synthesis while keeping the interface clear about what is happening.',
-      approach:
-        'Treat voice and visual feedback as one experience. An interactive, futuristic interface communicates when the assistant is ready, listening, processing or responding.',
-      solution:
-        'An independent personal assistant developed by Enzo Sena in two complementary forms: a desktop application with local voice processing, and a browser-based web/PWA experience with AI integration through an API.',
-      outcome:
-        'An independent exploration of voice, conversational AI and real-time visual feedback across desktop and web. The project brings together desktop development, mobile interfaces, API integration and custom software.',
-      highlights: [
-        'Speech recognition and speech synthesis',
-        'Conversational AI through an API in the web version',
-        'Real-time visual interaction states',
-        'Local voice processing on desktop',
-        'Browser access and mobile support',
-        'Desktop and web/PWA experiences',
-      ],
-      sections: [
-        {
-          title: 'Desktop application',
-          text: 'Built with Tauri and React / Vite. Desktop voice processing uses whisper.cpp for speech-to-text and Piper for text-to-speech, within an interactive interface that makes the assistant’s state visible.',
-        },
-        {
-          title: 'Web / PWA experience',
-          text: 'Accessible through the browser, with an experience adapted for mobile devices. The web version combines browser speech recognition and speech synthesis with a serverless architecture and AI integration through an API.',
-        },
-        {
-          title: 'Voice interaction',
-          text: 'Speech input, processing and spoken responses form the interaction cycle. Visual states — ready, listening, processing and responding — help the user follow each stage in real time.',
-        },
-        {
-          title: 'AI integration',
-          text: 'In the web version, conversational AI is integrated through an API. This connects voice interaction with AI responses within the browser-based experience.',
-        },
-        {
-          title: 'Technologies used',
-          text: 'Desktop: Tauri, React, Vite, whisper.cpp and Piper. Web / PWA: browser speech recognition, speech synthesis, an AI API and a serverless architecture.',
-        },
-      ],
     },
   ],
   form: {

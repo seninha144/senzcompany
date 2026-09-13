@@ -52,10 +52,9 @@ The API checks origin, request content type and size, field lengths and formats,
 
 ## Project assets and publication inputs
 
-The supplied brief is the source for project facts. Marcos Cell, Restaurant Management Platform and J.A.R.V.I.S. use the founder-supplied screenshots in `public/images/projects/`, configured in `src/content/media.ts`. Their full interfaces are displayed without cropping. LUZEN replaces the former RESISOL entry as a concept / independent jewelry project. Its optional media lives in `public/projects/luzen/`; see the README in that directory for exact filenames. Additional desktop/mobile screenshots can use the existing media slots. The components use `next/image` with responsive sizes and reserved dimensions. The original supplied files remain in `images/`.
+The public portfolio order is VANTA, LUZEN, Restaurant Management Platform, shared by all five languages. VANTA is explicitly a fictional fashion concept by SENZ; its localized copy and SEO live in `src/content/vanta.ts`. Its supplied recording is used on the homepage, work listing and case page through the shared `ProjectLoop` component. LUZEN keeps its own case composition and approved cover; Restaurant Management Platform retains its supplied screenshot and content.
 
-J.A.R.V.I.S. is the fourth project at `/{locale}/work/jarvis`, identified as an independent project. Its localized content describes the desktop voice stack and web/PWA API integration without naming an unconfirmed AI provider or claiming a public launch. Optional project subtitle, type label and additional case-study sections use the existing page components. No location is displayed when none was supplied. Approved artwork and screenshots can be connected through `projectMedia.jarvis`.
-
+`public/projects/vanta/vanta_video_senz.mp4` is the original 1920×1080, 52.47-second recording with its MP4 metadata moved ahead of the media payload for progressive loading. No frames or audio were re-encoded. The original remains in `images/`. The poster is a frame extracted from that recording. See `public/projects/vanta/README.md` for media behavior and validation limits.
 Social URLs are intentionally empty in `site.socials`. Add verified Instagram, LinkedIn and GitHub profile URLs there to show them in the footer. No awards, employees, addresses, testimonials, project years or performance metrics have been invented.
 
 Before public launch, supply the approved project screenshots, verified social URLs, a working destination for `senz@senzcompany.com`, and the inquiry delivery endpoint. Review the informational privacy/terms copy against the actual business identity, hosting provider, delivery provider and retention arrangements. The implementation does not claim these pages are a jurisdiction-specific legal policy.
@@ -70,11 +69,11 @@ System fonts avoid render-blocking font requests and font-swap layout shifts. Pr
 
 ## Content and design
 
+The existing warm paper, charcoal and sage identity is unchanged. Project previews use a lead VANTA video above a quieter LUZEN / restaurant row, stacking in the same order on mobile. The case navigation follows VANTA → LUZEN → Restaurant Management Platform → VANTA. Institutional sections retain their existing components and interactions.
+
 The shared locale layout includes a two-second typographic brand intro, built with CSS and a small inline bootstrap in `src/components/brand-intro.tsx`. It reuses the existing lowercase wordmark and palette. `sessionStorage['senz-intro-seen']` suppresses replay across navigation, locale changes and refreshes in the same tab. To preview again, open a fresh browser session or clear that key and reload.
 
 The bootstrap runs before body paint to avoid a flash on returning visits. It does not depend on hydration or block page rendering. Reduced motion, disabled JavaScript or unavailable session storage skip the intro. Keyboard, pointer, focus and page-exit interactions release it immediately; normal completion uses a fade and a 2.2-second fallback. All temporary scroll rules depend on one root attribute, which is removed on completion. No content is made inert or hidden from assistive technology. The `suppressHydrationWarning` on the root element is scoped to this intentional pre-hydration attribute. The intro has no heading or focusable content.
-
-Warm paper, charcoal and a muted sage studio accent; the orange surface belongs to the MARCOS CELL illustration. The identity is typographic and can be replaced by an SVG in the shared header/footer. Services use accessible vertical tabs with arrow-key, Home and End navigation. The header, service explorer, capability disclosures and inquiry form are interactive client boundaries.
 
 Use `npm run format` after editing. Keep locale schemas aligned and add new public paths to both page generation and the sitemap.
 
@@ -85,7 +84,5 @@ The founder composition displays the supplied portrait from `public/images/studi
 ## LUZEN
 
 Localized copy is in `src/content/luzen.ts`, referenced by the five existing dictionaries. The dedicated `LuzenCase` reuses SENZ navigation, tokens and project navigation. Optional images and video are detected by `src/content/luzen-media.ts` at build time. Rebuild after adding files. No stack or implemented store features are assumed.
-
-Old localized `/work/resisol` addresses permanently redirect to `/work/luzen`. Legacy unused CSS selectors and historical visual references remain for safety; they are not rendered. Other project content remains unchanged, with J.A.R.V.I.S. next-project navigation now pointing to LUZEN.
 
 Run `node scripts/test-project-loop.mjs` to verify the video using a temporary local fixture and a generated test-only recording. Stop the development server first; the script uses port 3001 and removes its fixture route on completion.

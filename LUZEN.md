@@ -20,7 +20,6 @@ LUZEN ocupa a primeira posição na home e no portfólio, como conceito / projet
 - `next.config.ts`: redirecionamentos permanentes dos endereços antigos e da rota sem idioma.
 - `tests/luzen.spec.ts`: rotas, tradução, sitemap e ausência de media.
 - `tests/site.spec.ts`: navegação atualizada para LUZEN.
-- `tests/portfolio-visual.spec.ts-snapshots/`: referências atualizadas para a nova capa, case e próximo projeto do J.A.R.V.I.S.
 - `scripts/test-project-loop.mjs`: teste isolado com gravação sintética temporária; nenhum vídeo fictício publicado.
 - `scripts/visual-audit.mjs`: rota de auditoria atualizada.
 - `public/projects/luzen/README.md`, `README.md`, `QA.md`, `LUZEN.md`: configuração e documentação.
@@ -48,6 +47,6 @@ Ferramenta: `image_gen` integrada. Referência: `images/image_projects/luzen_pro
 
 ## Referências antigas
 
-Resisol permanece apenas nos redirecionamentos de compatibilidade, testes desses redirecionamentos, seletores CSS sem utilização e documentação/referências visuais históricas. As cópias locais de segurança em `.visual-review/` também conservam o estado anterior e não são publicadas. Não existe uma página pública Resisol, nem links para ela na navegação, no portfólio ou no sitemap.
+A sequência atual dos cases é VANTA → LUZEN → Restaurant Management Platform → VANTA. A capa LUZEN surge numa coluna secundária no desktop e mantém a mesma identidade e página individual.
 
-Os projetos Marcos Cell, Restaurant Management Platform e J.A.R.V.I.S. conservam conteúdo, imagens e componentes. O link de próximo projeto no fim do J.A.R.V.I.S. aponta agora para LUZEN para fechar a sequência sem links antigos.
+Resisol permanece apenas nos redirecionamentos de compatibilidade, testes desses redirecionamentos, seletores CSS sem utilização e documentação/referências visuais históricas. As cópias locais de segurança em `.visual-review/` também conservam o estado anterior e não são publicadas. Não existe uma página pública Resisol, nem links para ela na navegação, no portfólio ou no sitemap.

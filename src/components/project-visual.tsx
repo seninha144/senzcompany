@@ -1,14 +1,13 @@
+import { VantaVisual } from './vanta-visual';
 import { LuzenVisual } from './luzen-visual';
 import type { Content } from '@/content';
 import Image from 'next/image';
 import { slugs, type Locale } from '@/content/types';
 import { projectMedia } from '@/content/media';
 
-// Deliberately illustrative artwork, not unverified client screenshots.
-// Replace this component with approved project assets in next/image when supplied.
+// Each project uses its approved media and the shared preview components.
 export function ProjectVisual({
   index,
-  c,
   detail = false,
   locale = 'en',
 }: {
@@ -17,8 +16,8 @@ export function ProjectVisual({
   detail?: boolean;
   locale?: Locale;
 }) {
-  if (index === 0) return <LuzenVisual locale={locale} detail={detail} />;
-  const p = c.projects[index];
+  if (slugs[index] === 'vanta') return <VantaVisual locale={locale} />;
+  if (slugs[index] === 'luzen') return <LuzenVisual locale={locale} detail={detail} />;
   const media = projectMedia[slugs[index]].hero;
   if (media)
     return (
@@ -30,102 +29,11 @@ export function ProjectVisual({
           src={media.src}
           alt={media.alt[locale]}
           fill
-          sizes={
-            index === 0 || index === 3 || detail
-              ? '(max-width: 767px) 100vw, 90vw'
-              : '(max-width: 767px) 100vw, 45vw'
-          }
+          sizes={detail ? '(max-width: 767px) 100vw, 90vw' : '(max-width: 767px) 100vw, 45vw'}
           style={{ objectFit: 'contain' }}
           preload={detail}
         />
       </div>
     );
-  return (
-    <div
-      className={`project-visual visual-${index} ${detail ? 'detail-visual' : ''}`}
-      role="img"
-      aria-label={`${p.name} — ${c.visualNote}`}
-    >
-      {index === 1 ? (
-        <>
-          <div className="cell-brand">
-            MARCOS
-            <br />
-            CELL<span>↗</span>
-          </div>
-          <div className="phone phone-back">
-            <div className="camera-cluster">
-              <i />
-              <i />
-              <i />
-            </div>
-          </div>
-          <div className="phone phone-front">
-            <div className="phone-notch" />
-            <div className="phone-screen-mark">
-              M<span>C</span>
-            </div>
-            <div className="phone-screen-line" />
-            <div className="phone-screen-line short" />
-          </div>
-          <div className="visual-bottom">
-            <span>{p.location}</span>
-            <span>{p.category}</span>
-          </div>
-        </>
-      ) : index === 2 ? (
-        <>
-          <div className="platform-grid" />
-          <div className="platform-caption">
-            <span className="status-dot" />
-            {c.inDevelopment}
-          </div>
-          <div className="schedule-art">
-            <div className="schedule-sidebar">
-              <i />
-              <i />
-              <i />
-              <i />
-            </div>
-            <div className="schedule-content">
-              <div className="schedule-head">
-                {p.highlights[1]}
-                <span>↗</span>
-              </div>
-              <div className="schedule-columns">
-                {Array.from({ length: 5 }, (_, i) => (
-                  <div key={i}>
-                    <span>0{i + 1}</span>
-                    {Array.from({ length: 3 }, (_, j) => (
-                      <b key={j} className={`shift shift-${(i + j) % 3}`} />
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="visual-bottom">
-            <span>{c.independentProduct}</span>
-            <span>01 — 03</span>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="jarvis-signal" aria-hidden="true">
-            {[12, 22, 38, 60, 42, 74, 100, 64, 40, 82, 54, 30, 18].map((height, i) => (
-              <span key={i} style={{ height: `${height}%` }} />
-            ))}
-          </div>
-          <div className="jarvis-title">
-            <span>{p.name}</span>
-            <p>{p.subtitle}</p>
-          </div>
-          <div className="visual-bottom">
-            <span>{p.typeLabel}</span>
-            <span>{p.category}</span>
-          </div>
-        </>
-      )}
-    </div>
-  );
+  return null;
 }
